@@ -1,0 +1,66 @@
+@import '../../global.scss';
+
+.education{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header{
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        align-self: center;
+        text-align: center;
+        overflow: hidden;
+        max-height: 22vh;
+
+        h1{
+            font-size: 40px;
+            margin-bottom: 10px;
+
+            @include mobile{
+                font-size: 20px;
+            }
+        }
+
+        .description{
+            color: $tertiaryColor;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 300;
+            font-size: 14px;
+            padding-bottom: 50px;
+            span{
+                font-family: inherit;
+            }
+
+            a{
+                font-family: inherit;
+                color: inherit;
+                text-decoration: inherit;
+            }
+
+            h2{
+                color: $secondColor;
+                font-family: inherit;
+                display: inline;
+                font-size: 15px;
+                font-weight: 500;
+                font-style: bold;
+            }
+        }
+    }
+
+    
+
+    ul{
+        max-height: 10vh;
+        margin: 10px;
+        padding:0;
+        list-style: none;
+        display: flex;
+        width: 75%;
+        flex-wrap: wrap;
+        margin-left: 10%;
+    }
+
+}

@@ -1,0 +1,19 @@
+$mainColor: white;
+$secondColor: rgb(230, 230, 230);
+$tertiaryColor: rgb(200, 200, 200);
+$highlight: beige;
+$background: rgb(23, 17, 25);
+$outline: rgb(26, 20, 27);
+$menuColor: rgba(0, 0, 0, 0.8);
+$topActiveColor: rgb(242, 168, 255);
+$moduleHighlight: rgba(125, 11, 145, 0.8);
+$primarySelect: rgb(68, 82, 184);
+$secondarySelect: rgb(235, 0, 85);
+
+$width:768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}){
+        @content
+    }
+}

@@ -1,0 +1,96 @@
+@import "../../global.scss";
+.modules{
+    // display: flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 100%;
+    max-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+        @include mobile{
+            width: 100%;
+        }
+    
+        .item{
+           width: 220px;
+           height: 150px;
+           border-radius:  20px;
+           border: 1px solid $outline; 
+           margin: 10px 20px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: $mainColor;
+           position: relative;
+           transition: all .5s ease;
+           cursor: pointer;
+           overflow: hidden;
+    
+           @include mobile{
+            margin: 10px 10px;
+            width: 130px;
+            height: 100px;
+        }
+    
+           h3{
+               position: absolute;
+               font-size: 18px;
+               text-align: center;
+               padding: 2px;
+           }
+    
+           h4{
+               font-size: 15px;
+               position: absolute;
+               z-index: 1;
+               color: $mainColor;
+               bottom: 0;
+               background-color: $outline;
+               width: 100%;
+               text-align: center;
+           }
+    
+           img{
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               z-index: 1;
+               overflow: hidden;
+           }
+    
+           &:hover{
+               background-color: $moduleHighlight;
+    
+               img{
+                   opacity: 0.2;
+                   z-index: 0;
+               }
+    
+               h4{
+                   opacity: 0;
+               }
+
+               h3{
+                    @include mobile{
+                        font-size: 14px;
+                    }
+               }
+           }
+        }
+    }
+
+    .pagination{
+        margin: 0 auto;
+        display:inline-block;
+        overflow: hidden;
+    }
+}
