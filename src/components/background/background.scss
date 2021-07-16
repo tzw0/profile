@@ -6,7 +6,7 @@
         left: -70vw;
         bottom: -20vh;
 
-        z-index: 0;
+        z-index: 1;
 
         img{
             height: 120vh;
@@ -18,8 +18,8 @@
         position: fixed;
         left: -70vw;
         bottom: -20vh;
-        // opacity: 32%;
-        z-index: 0;
+        opacity: 15%;
+        z-index: 2;
 
         img{
             height: 120vh;
