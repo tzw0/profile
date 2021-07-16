@@ -1,11 +1,10 @@
 .background{
     position: fixed;
+    left: -70vw;
+    bottom: -20vh;
 
     .gridBackground{
         position: fixed;
-        left: -70vw;
-        bottom: -20vh;
-
         z-index: 1;
 
         img{
@@ -16,10 +15,8 @@
 
     .logosBackground{
         position: fixed;
-        left: -70vw;
-        bottom: -20vh;
-        opacity: 15%;
         z-index: 2;
+        opacity: 15%;
 
         img{
             height: 120vh;

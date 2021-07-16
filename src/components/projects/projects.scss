@@ -1,8 +1,17 @@
 @import "../../global.scss";
 
 .projects {
-    background-color: $background;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // background-color: $background;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.swiper-container {
+    width: 1000px;
+    z-index: 3;
+}
+
+.swiper-wrapper {
+    list-style: none;
 }
