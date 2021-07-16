@@ -8,9 +8,6 @@ export default function Intro() {
                 <div className="me">
                     <img src="assets/home/homepic.png" alt="" />
                 </div>
-                <div className="gridBackground">
-                    <img src="assets/home/background.png" alt="" />
-                </div>
             </div>
 
             <div></div>

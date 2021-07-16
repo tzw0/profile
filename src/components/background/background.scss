@@ -1,0 +1,29 @@
+.background{
+    position: fixed;
+
+    .gridBackground{
+        position: fixed;
+        left: -70vw;
+        bottom: -20vh;
+
+        z-index: 0;
+
+        img{
+            height: 120vh;
+            width: 270vw;
+        }
+    }
+
+    .logosBackground{
+        position: fixed;
+        left: -70vw;
+        bottom: -20vh;
+        opacity: 12%;
+        z-index: 0;
+
+        img{
+            height: 120vh;
+            width: 270vw;
+        }
+    }
+}
