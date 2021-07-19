@@ -5,13 +5,15 @@
     // display: flex;
     // align-items: center;
     // justify-content: center;
+
 }
 
 .swiper-container {
-    width: 1000px;
     z-index: 3;
 }
 
 .swiper-wrapper {
+    overflow: visible;
+
     list-style: none;
 }
