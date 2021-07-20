@@ -27,6 +27,10 @@
                     width: 46px;
                     height: 46px;
                 }
+
+                &:hover{
+                    color: $secondarySelect;
+                }
             }
 
             .itemContainer{
@@ -53,6 +57,10 @@
                         text-decoration: inherit;
                     }
                 }
+
+                &:hover{
+                    color: $secondarySelect;
+                }
             }
         }
 
@@ -78,19 +86,19 @@
     }
 
     &.active{
-        color: $topActiveColor;
+        color: $primarySelect;
 
         .hamburger{
             span{
                 &:first-child{
-                    background-color: $topActiveColor;
+                    background-color: $secondarySelect;
                     transform: rotate(45deg);
                 }
                 &:nth-child(2) {
                     opacity: 0;
                 }
                 &:last-child{
-                    background-color: $topActiveColor;
+                    background-color: $primarySelect;
                     transform: rotate(-45deg);
                 }
             }

@@ -1,4 +1,18 @@
+@import "../../global.scss";
+
 .internships{
-    width: 100%;
-    height: 100%;
+    
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        h1{
+            font-size: $headerSize;
+    
+            @include mobile{
+                font-size: 20px;
+            }
+        }
+    }
 }

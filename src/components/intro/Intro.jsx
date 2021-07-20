@@ -1,5 +1,6 @@
 import './intro.scss'
 import { Button } from '@material-ui/core'
+import resume from './resume.pdf'
 
 export default function Intro() {
     return (
@@ -16,10 +17,12 @@ export default function Intro() {
                 <h1>Hi, I'm Zheng Wen</h1>
                 <p>I am a final year Computer Engineering Student in NUS specialising in Large Scale Computing. I take pride in my work and actively seek for opportunities to expose myself to new and useful tech tools</p>
                 <span className="buttonContainer">
-                    <Button className="resume" variant="contained" color="primary">View Resume</Button>
-                    <Button className="portfolio" variant="contained" color="secondary">View Portfolio</Button>
+                    <a href={resume} target="_blank" rel="noreferrer">
+                        <Button className="resume" variant="contained" color="primary">View Resume</Button>
+                    </a>
+                    <a href="#projects"><Button className="portfolio" variant="contained" color="secondary">View Portfolio</Button></a>
                 </span>
             </div>
-        </div>
+        </div >
     )
 }

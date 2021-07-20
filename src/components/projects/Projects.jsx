@@ -135,7 +135,7 @@ export default function Projects() {
                 <Autocomplete
                     classes={classes}
                     multiple
-                    limitTags={3}
+                    limitTags={5}
                     id="fixed-tags-demo"
                     value={tags}
                     onChange={(event, newValue) => {
@@ -156,7 +156,7 @@ export default function Projects() {
                             />
                         ))
                     }
-                    style={{ width: 500, color: "white" }}
+                    style={{ width: "80%", minWidth: "400px", color: "white" }}
                     renderInput={(params) => (
                         <TextField {...params}
                             variant="outlined" placeholder="Search Project Tags or Project Titles" />

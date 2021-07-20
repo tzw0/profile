@@ -13,10 +13,13 @@
         text-align: center;
         overflow: hidden;
         max-height: 22vh;
+        overflow: hidden;
 
         h1{
             font-size: $headerSize;
             margin-bottom: 10px;
+        overflow: hidden;
+
 
             @include mobile{
                 font-size: 20px;
@@ -24,6 +27,7 @@
         }
 
         .description{
+            overflow: hidden;
             color: $tertiaryColor;
             font-family: 'Roboto Mono', monospace;
             font-weight: 300;
