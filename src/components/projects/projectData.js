@@ -1,6 +1,6 @@
 const electricSkateboard = {
     "img": "assets/projects/electricSkateboard.png",
-    "tags": ["arduino", "hardware", "team", "self-initiated"],
+    "tags": ["arduino", "hardware", "software", "team", "self-initiated"],
     "timeframe": "dec 18 - jan 19",
     "title": "ELECTRIC SKATEBOARD",
     "description": "Armed with arduinos and a brushless DC motor, my team and I created a working bluetooth-controlled electric skateboard over the summer break.",
@@ -56,7 +56,7 @@ const farmio = {
 
 const electricTrolley = {
     "img": "assets/projects/electricTrolley.png",
-    "tags": ["esp32", "hardware", "pair", "self-initiated"],
+    "tags": ["esp32", "hardware", "software", "pair", "self-initiated"],
     "timeframe": "may 19 - jun 19",
     "title": "ELECTRIC TROLLEY",
     "description": "Double the power, this trolley can move really really fast. It is controlled by a webpage that is hosted by an esp32 at the core of the machine.",

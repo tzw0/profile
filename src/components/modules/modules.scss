@@ -34,6 +34,7 @@
            transition: all .5s ease;
            cursor: pointer;
            overflow: hidden;
+           background-color: $moduleHighlight;
     
            @include mobile{
             margin: 10px 10px;
@@ -49,7 +50,7 @@
            }
     
            h4{
-               font-size: 15px;
+               font-size: 20px;
                position: absolute;
                z-index: 10;
                color: $mainColor;
@@ -57,26 +58,26 @@
                background-color: $outline;
                width: 100%;
                text-align: center;
+               opacity: 100;
            }
     
            img{
+               transition: all .7s ease;
                width: 100%;
                height: 100%;
                object-fit: cover;
-               z-index: 10;
                overflow: hidden;
+               opacity: 0.2;
+               z-index: 0;
+               filter: grayscale(100);
            }
-    
+
            &:hover{
-               background-color: $moduleHighlight;
     
                img{
-                   opacity: 0.2;
-                   z-index: 0;
-               }
-    
-               h4{
-                   opacity: 0;
+                   opacity: 100;
+                   z-index: 10;
+                   filter: grayscale(0);
                }
 
                h3{

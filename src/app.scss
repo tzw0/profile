@@ -2,11 +2,17 @@
 
 .app{
     height: 100vh;
+    background-image: url("./backgroundMain.png");
+    background-color: $background;
+    // background-position-x: -60vw;
+    // background-position-y: -25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:300%;
 
     .sections{
         width: 100%;
         height: calc(100vh - 70px);
-        background-color: $background;
         color: $mainColor;
         position: relative;
         top: 70px;
