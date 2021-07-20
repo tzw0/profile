@@ -1,53 +1,209 @@
 import "./projects.scss"
 import React from 'react';
+import { useEffect, useState } from "react"
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from 'swiper';
-import 'swiper/swiper.scss';
+import Chip from '@material-ui/core/Chip';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { makeStyles } from "@material-ui/core/styles";
 
-SwiperCore.use([Navigation, Pagination]);
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css"
+
+// import Swiper core and required modules
+import SwiperCore, {
+    Pagination
+} from 'swiper/core';
+import { projectData, projectTags } from "./projectData";
+import Button from '@material-ui/core/Button';
+
+// install Swiper modules
+SwiperCore.use([Pagination]);
+
+function filter(tags_) {
+    if (tags_.length === 0) {
+        return projectData
+    }
+
+    const projects_ = []
+    var searchByProjectTitle = false
+
+    for (let t = 0; t < tags_.length; t++) {
+        if (tags_[t][0] === "*") {
+            searchByProjectTitle = true
+            var projectTitle = tags_[t].slice(2)
+            for (let p = 0; p < projectData.length; p++) {
+                if (projectData[p].title === projectTitle) {
+                    projects_.push(projectData[p])
+                    break
+                }
+            }
+        }
+    }
+
+    if (searchByProjectTitle) {
+        return projects_
+    }
+
+    for (let p = 0; p < projectData.length; p++) {
+        var remove = false
+        for (let t = 0; t < tags_.length; t++) {
+            var projectTags = new Set(projectData[p].tags)
+            if (projectTags.has(tags_[t]) === false) {
+                remove = true
+                break
+            }
+        }
+        if (!remove) {
+            projects_.push(projectData[p]);
+        }
+
+    }
+
+    return projects_
+}
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        "& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
+            // Default transform is "translate(14px, 20px) scale(1)""
+            // This lines up the label with the initial cursor position in the input
+            // after changing its padding-left.
+            transform: "translate(34px, 20px) scale(1);"
+        }
+    },
+    inputRoot: {
+        color: "white",
+        // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
+        '&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child': {
+            // Default left padding is 6px
+            paddingLeft: 26
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "white"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "white"
+        },
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#DF0252"
+        }
+    },
+    paper: {
+        background: "#333",
+        color: "white",
+    },
+    option: {
+        // Hover with light-grey
+        '&[data-focus="true"]': {
+            backgroundColor: '#4452B8',
+            borderColor: 'transparent',
+        },
+        // Selected has dark-grey
+        '&[aria-selected="true"]': {
+            backgroundColor: "#DF0252",
+            borderColor: 'transparent',
+        },
+    },
+    clearIndicator: {
+        color: "white"
+    },
+    popupIndicator: {
+        color: "white"
+    }
+}));
 
 export default function Projects() {
-    const slides = [];
+    const fixedOptions = [];
+    const [tags, setTags] = useState([...fixedOptions]);
+    const [projects, setProjects] = useState([]);
 
-    for (let i = 1; i < 6; i += 1) {
-        slides.push(
-            <SwiperSlide key={`slide-${i}`} tag="li">
-                <img src={"assets/projects/p" + i + ".png"} alt={`Slide ${i}`} />
-            </SwiperSlide>
-        );
-    }
+    useEffect(() => {
+        setProjects(filter(tags));
+    }, [tags])
+
+    const classes = useStyles();
+
     return (
         <div className="projects" id="projects">
-            {/* <React.Fragment>
-                <Swiper
-                    id="gallery"
-                    tag="section"
-                    wrapperTag="ul"
-                    navigation
-                    pagination
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    onInit={(swiper) => console.log("asdasd")}
-                    onSlideChange={(swiper) => console.log('slide index changed to : ', swiper.activeIndex)}
-                >
-                    {slides}
-                </Swiper>
-            </React.Fragment> */}
+            <div className="header">
+                <h1>Projects</h1>
+            </div>
+            <div className="controls">
+                <Autocomplete
+                    classes={classes}
+                    multiple
+                    limitTags={3}
+                    id="fixed-tags-demo"
+                    value={tags}
+                    onChange={(event, newValue) => {
+                        setTags([
+                            ...fixedOptions,
+                            ...newValue.filter((option) => fixedOptions.indexOf(option) === -1),
+                        ]);
+                    }}
+                    options={projectTags}
+                    getOptionLabel={(option) => option}
+                    renderTags={(tagValue, getTagProps) =>
+                        tagValue.map((option, index) => (
+                            <Chip
+                                color="secondary"
+                                label={option}
+                                {...getTagProps({ index })}
+                                disabled={fixedOptions.indexOf(option) !== -1}
+                            />
+                        ))
+                    }
+                    style={{ width: 500, color: "white" }}
+                    renderInput={(params) => (
+                        <TextField {...params}
+                            variant="outlined" placeholder="Search Project Tags or Project Titles" />
+                    )}
+                />
+            </div>
             <Swiper
+                slidesPerView={"auto"}
                 spaceBetween={50}
-                slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-            >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                ...
+                freeMode={true}
+                centeredSlides={true}
+                pagination={{
+                    "clickable": true,
+                }}
+                className="mySwiper">
+                {projects.map((d) => (
+                    <SwiperSlide>
+                        <div className="card">
+                            <div class="layer"></div>
+                            <div className="content">
+                                <h2>{d.title}</h2>
+                                <div className="tags">
+                                    {d.tags.map((t) => (
+                                        <div className="tag"
+                                            onClick={() => {
+                                                var tagsSet = new Set(tags)
+                                                if (tagsSet.has(t)) return;
+                                                setTags(tags.concat(t));
+                                            }}>{t}</div>
+                                    ))}
+                                </div>
+                                <div className="projectCover">
+                                    <img src={d.img} alt=""></img>
+                                </div>
+
+                                <p>
+                                    {d.description}
+                                    <br />
+                                    <div className="timeframe">{d.timeframe}</div>
+                                </p>
+                                <Button variant="contained" color="primary">Find out more</Button>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
             </Swiper>
+            <h2 style={projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }}>No Project Matches...</h2>
         </div>
     )
 }

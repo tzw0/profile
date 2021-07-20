@@ -35,7 +35,7 @@
 
     .introParagraph{
         z-index: 10;
-        margin: 25vh 10vw;
+        margin: 20vh 5vw;
         width: 40vw;
         
         @include mobile{
@@ -45,6 +45,7 @@
 
         h1{
             margin-bottom: 20px;
+            font-size: $headerSize;
         }
 
         p{
