@@ -1,6 +1,7 @@
 @import "../../global.scss";
 
 .contact {
+    width: 100%;
 
     .header{
         display: flex;
@@ -15,4 +16,79 @@
             }
         }
     }
+
+    .messageBody{
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 70%;
+
+        .formWord{
+
+            margin-top: 20px;
+            span{
+                line-height: 40px;
+                font-size: large;
+            }
+
+            input{
+                border: none;
+                font-size: medium;
+                color: $mainColor;
+                background-color: #333;
+                width: 100%;
+                padding: 15px;
+                // transition: 1s ease;
+
+                &:focus{
+                    outline: none;
+                    text-decoration: none;
+                    border-bottom: solid 1px $secondarySelect;
+                    color: $secondarySelect;
+                }
+
+                // &:-webkit-autofill, -webkit-autofill:hover{
+                //     background-color: green;
+                //     border: green;
+                // }
+            }
+
+            textarea{
+                transition: 1s ease;
+                font-size:medium;
+                margin-bottom: 10px;
+                outline: none;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding: 15px;
+                color: $mainColor;
+                background-color: #333;
+                min-height: 100px;
+                &:focus{
+                    // border: none;
+                    text-decoration: none;
+                    border-bottom: solid 1px $secondarySelect;
+                    outline: none;
+                    box-shadow: none;
+                    color: $secondarySelect;
+                }
+            }
+        }
+
+        .row{
+            margin-top: 20px;
+        }
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px $primarySelect inset !important;
 }

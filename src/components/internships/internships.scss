@@ -15,4 +15,41 @@
             }
         }
     }
+
+    // .card{
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     min-height: 300px;
+    //     background-color: #333;
+    //     border-radius: 30px;
+    //     margin: 10px;
+    // }
+
+    .swiper-slide img {
+        display: block;
+        max-height: 60vh;
+        max-width: 100%;
+        cursor: pointer;
+        border-radius: 50px;
+      }
+
+    .swiper-wrapper {
+        overflow: visible;
+        list-style: none;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-container {
+        z-index: 3;
+        margin: 25px;
+        overflow-y: hidden;
+        width: auto;
+        height: auto;
+    }
 }

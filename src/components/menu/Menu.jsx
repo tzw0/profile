@@ -5,7 +5,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import AssessmentIcon from '@material-ui/icons/Assessment';
-import PersonIcon from '@material-ui/icons/Person';
+// import PersonIcon from '@material-ui/icons/Person';
 
 export default function Menu({ menuOpen, setMenuOpen }) {
     return (
@@ -29,9 +29,9 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                 <li onClick={() => setMenuOpen(false)}>
                     <a href='#contact'><EmailIcon />&nbsp;Contact</a>
                 </li>
-                <li onClick={() => setMenuOpen(false)}>
+                {/* <li onClick={() => setMenuOpen(false)}>
                     <a href='#about'><PersonIcon />&nbsp;About me</a>
-                </li>
+                </li> */}
             </ul>
         </div>
     )

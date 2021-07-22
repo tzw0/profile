@@ -11,16 +11,18 @@ import { makeStyles } from "@material-ui/core/styles";
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/navigation/navigation.min.css"
 
 // import Swiper core and required modules
 import SwiperCore, {
+    Navigation,
     Pagination
 } from 'swiper/core';
 import { projectData, projectTags } from "./projectData";
 import Button from '@material-ui/core/Button';
 
 // install Swiper modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation]);
 
 function filter(tags_) {
     if (tags_.length === 0) {
@@ -171,11 +173,12 @@ export default function Projects() {
                 pagination={{
                     "clickable": true,
                 }}
+                navigation={true}
                 className="mySwiper">
                 {projects.map((d) => (
                     <SwiperSlide>
                         <div className="card">
-                            <div class="layer"></div>
+                            <div className="layer"></div>
                             <div className="content">
                                 <h2>{d.title}</h2>
                                 <div className="tags">
