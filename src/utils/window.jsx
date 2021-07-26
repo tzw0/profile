@@ -22,3 +22,8 @@ export default function useWindowDimensions() {
 
     return windowDimensions;
 }
+
+export function IsLandscape() {
+    const { height, width } = useWindowDimensions();
+    return height < width
+}

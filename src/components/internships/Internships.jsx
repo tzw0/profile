@@ -7,14 +7,6 @@ export default function Internships() {
             <div className="header">
                 <h1>Internships</h1>
             </div>
-            {/* <div className="container">
-                <div className="internship-container">
-                    <img src="assets/internships/dso.jpg" alt="" />
-                </div>
-                <div className="internship-container">
-                    <img src="assets/internships/shopee.jpg" alt="" />
-                </div>
-            </div> */}
 
             <div className="container">
                 <div className="card">
@@ -24,8 +16,8 @@ export default function Internships() {
                             <div className="contentBx">
                                 <h3>Software Engineer<br /><span>Electronic Systems Division</span></h3>
                             </div>
+                            <row>jun 20 - aug 20</row>
                             <Button className="btn" variant="contained" color="primary"> find out more</Button>
-
                         </div>
                     </div>
                 </div>
@@ -37,8 +29,8 @@ export default function Internships() {
                             <div className="contentBx">
                                 <h3>TechOps Engineer<br /><span>SPACE Team</span></h3>
                             </div>
+                            <row>jan 21 - jul 21</row>
                             <Button className="btn" variant="contained" color="primary"> find out more</Button>
-
                         </div>
                     </div>
                 </div>
