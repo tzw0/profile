@@ -17,28 +17,28 @@ export const skillData = [
                 "percent": 90
             },
             {
-                "skill": "C++",
-                "percent": 60
-            },
-            {
-                "skill": "C#",
-                "percent": 60
+                "skill": "Golang",
+                "percent": 80
             },
             {
                 "skill": "Python",
+                "percent": 70
+            },
+            {
+                "skill": "C++",
                 "percent": 65
             },
             {
-                "skill": "Java",
-                "percent": 60
+                "skill": "C#",
+                "percent": 65
             },
             {
                 "skill": "JavaScript",
                 "percent": 65
             },
             {
-                "skill": "Golang",
-                "percent": 80
+                "skill": "Java",
+                "percent": 65
             },
         ]
     },
@@ -47,16 +47,16 @@ export const skillData = [
         "icon": ArtTrackIcon,
         "panels": [
             {
-                "skill": "React",
-                "percent": 50
-            },
-            {
                 "skill": "HTML",
                 "percent": 70
             },
             {
+                "skill": "React",
+                "percent": 60
+            },
+            {
                 "skill": "CSS",
-                "percent": 40
+                "percent": 50
             },
         ],
     },
@@ -65,16 +65,16 @@ export const skillData = [
         "icon": SettingsIcon,
         "panels": [
             {
-                "skill": "Django",
-                "percent": 50
+                "skill": "Gin",
+                "percent": 90
             },
             {
                 "skill": "NodeJs",
                 "percent": 80
             },
             {
-                "skill": "Gin",
-                "percent": 90
+                "skill": "Django",
+                "percent": 50
             },
             {
                 "skill": "Flask",
@@ -87,12 +87,12 @@ export const skillData = [
         "icon": DeveloperBoardIcon,
         "panels": [
             {
-                "skill": "Docker",
-                "percent": 60
-            },
-            {
                 "skill": "Jenkins",
                 "percent": 65
+            },
+            {
+                "skill": "Docker",
+                "percent": 60
             },
             {
                 "skill": "Harbor",
@@ -118,7 +118,7 @@ export const skillData = [
             },
             {
                 "skill": "Firebase",
-                "percent": 70
+                "percent": 75
             },
         ]
     },
@@ -146,7 +146,7 @@ export const skillData = [
         "panels": [
             {
                 "skill": "Flutter",
-                "percent": 50
+                "percent": 65
             },
         ],
     },
@@ -156,7 +156,7 @@ export const skillData = [
         "panels": [
             {
                 "skill": "Grafana",
-                "percent": 80
+                "percent": 85
             },
         ]
     }

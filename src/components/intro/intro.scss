@@ -15,13 +15,16 @@
        
 
         .me{
+            overflow: hidden;
             position: absolute;
             left: 15vw;
-            bottom: 25vh;
-            z-index: 10;
+            top: 50px;
+            z-index: 5;
             
             img{
                 height: 60vh;
+                min-height: 400px;
+                
                 
                 @include mobile{
                     opacity: 20%;

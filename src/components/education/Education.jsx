@@ -4,10 +4,28 @@ import Button from '@material-ui/core/Button';
 import "./education.scss"
 import transcript from './transcript.pdf'
 import Modules from "../modules/Modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/navigation/navigation.min.css"
+
 
 export default function Education() {
     const [selected, setSelected] = useState("allMods")
     const list = [
+        {
+            id: "allMods",
+            title: "All-Modules"
+        },
+        {
+            id: "software",
+            title: "- Software -",
+        },
+        {
+            id: "hardware",
+            title: "- Hardware -",
+        },
         {
             id: "y1s1",
             title: "Year1-Sem1",
@@ -40,18 +58,6 @@ export default function Education() {
             id: "y4s2",
             title: "Year4-Sem2",
         },
-        {
-            id: "hardware",
-            title: "- Hardware -",
-        },
-        {
-            id: "software",
-            title: "- Software -",
-        },
-        {
-            id: "allMods",
-            title: "All-Modules"
-        }
     ]
 
     return (
@@ -70,15 +76,23 @@ export default function Education() {
                     </a>
                 </div>
             </div>
-            <ul>
+            <Swiper
+                navigation={true}
+                slidesPerView={"auto"}
+                spaceBetween={20}
+            >
+
                 {list.map((item) => (
-                    <EducationList
-                        title={item.title}
-                        active={selected === item.id}
-                        setSelected={setSelected}
-                        id={item.id} />
+                    <SwiperSlide>
+                        <EducationList
+                            title={item.title}
+                            active={selected === item.id}
+                            setSelected={setSelected}
+                            id={item.id} />
+                    </SwiperSlide>
                 ))}
-            </ul>
+            </Swiper>
+
             <Modules selected={selected} />
         </div>
     )

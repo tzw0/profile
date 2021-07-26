@@ -1,20 +1,5 @@
 import "./internships.scss"
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css"
-import "swiper/components/navigation/navigation.min.css"
-
-// import Swiper core and required modules
-import SwiperCore, {
-    Navigation,
-    Pagination,
-    EffectFade,
-} from 'swiper/core';
-
-// install Swiper modules
-SwiperCore.use([EffectFade, Pagination, Navigation]);
+import { Button } from "@material-ui/core";
 
 export default function Internships() {
     return (
@@ -22,24 +7,41 @@ export default function Internships() {
             <div className="header">
                 <h1>Internships</h1>
             </div>
-            <div className="slides">
-                <Swiper
-                    effect={'fade'}
-                    slidesPerView={1}
-                    spaceBetween={500}
-                    centeredSlides={true}
-                    pagination={{
-                        "clickable": true,
-                    }}
-                    navigation={true}
-                    className="mySwiper">
-                    <SwiperSlide>
-                        <img src="assets/internships/dso.jpg" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="assets/internships/shopee.jpg" alt="" />
-                    </SwiperSlide>
-                </Swiper>
+            {/* <div className="container">
+                <div className="internship-container">
+                    <img src="assets/internships/dso.jpg" alt="" />
+                </div>
+                <div className="internship-container">
+                    <img src="assets/internships/shopee.jpg" alt="" />
+                </div>
+            </div> */}
+
+            <div className="container">
+                <div className="card">
+                    <div className="box">
+                        <div className="content">
+                            <h2>DSO</h2>
+                            <div className="contentBx">
+                                <h3>Software Engineer<br /><span>Electronic Systems Division</span></h3>
+                            </div>
+                            <Button className="btn" variant="contained" color="primary"> find out more</Button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card">
+                    <div className="box">
+                        <div className="content">
+                            <h2>Shopee</h2>
+                            <div className="contentBx">
+                                <h3>TechOps Engineer<br /><span>SPACE Team</span></h3>
+                            </div>
+                            <Button className="btn" variant="contained" color="primary"> find out more</Button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

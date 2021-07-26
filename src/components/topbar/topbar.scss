@@ -70,6 +70,7 @@
             .hamburger{
                 width: 32px;
                 height: 25px;
+                overflow: hidden;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;

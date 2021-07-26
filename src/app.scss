@@ -23,7 +23,7 @@
 
         > * {
             width: 100vw;
-            height: calc(100vh - 70px);
+            min-height: calc(100vh - 70px);
             border-bottom: 100px solid rgba(0, 0, 0, 0.096);
             scroll-snap-align: start;
         }

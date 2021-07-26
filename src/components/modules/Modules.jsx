@@ -15,6 +15,7 @@ import {
 import { useEffect, useState } from "react"
 import Pagination from '@material-ui/lab/Pagination';
 import { makeStyles } from '@material-ui/core/styles';
+import window from "../../utils/window"
 
 const useStyles = makeStyles(() => ({
     ul: {
@@ -23,8 +24,6 @@ const useStyles = makeStyles(() => ({
         }
     }
 }));
-
-const maxItemsPerPage = 6;
 
 function paginate(page, data, maxItems) {
     var upperBound = data.length > page * maxItems ? page * maxItems : data.length;
@@ -44,9 +43,13 @@ export default function Modules({ selected }) {
         setPage(value);
     };
 
+    const { height, width } = window();
+    const maxItemsPerPage = ((width * 0.7 / (220 + 22)) >> 0 === 0 ? 1 : Math.floor(width * 0.7 / (220 + 22))) *
+        (((height - 350) / (150 + 20)) >> 0 === 0 ? 1 : Math.floor(((height - 350) / (150 + 20))));
+
     useEffect(() => {
         setItems(paginate(page, data, maxItemsPerPage));
-    }, [page, data])
+    }, [page, data, maxItemsPerPage])
 
     useEffect(() => {
         switch (selected) {
@@ -88,9 +91,9 @@ export default function Modules({ selected }) {
         }
 
         setMaxPages(Math.ceil(data.length / maxItemsPerPage));
-        setPaginationStyle({ width: maxPages * 51 + 101 + "px" });
+        setPaginationStyle({ width: (maxPages > 7 ? 7 : maxPages) * 51 + 101 + "px" });
         setPage(1);
-    }, [selected, data, maxPages])
+    }, [selected, data, maxPages, maxItemsPerPage])
 
     return (
         <div className="modules">

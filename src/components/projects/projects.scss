@@ -1,11 +1,6 @@
 @import "../../global.scss";
 
 .projects {
-    h2{
-        justify-content: center;
-        display: flex;
-        font-weight: 300;
-    }
 
     .header{
         display: flex;
@@ -14,10 +9,6 @@
 
         h1{
             font-size: $headerSize;
-    
-            @include mobile{
-                font-size: 20px;
-            }
         }
     }
 
@@ -38,9 +29,12 @@
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        max-width: 450px;
+        min-height: 400px;
         min-width: 350px;
-        min-height: 450px;
+        width: 33vh;
+        height: calc(100vh - 400px);
+        max-width: 450px;
+        max-height: 600px;
         overflow-y: hidden;
         background: #333;
         border-radius: 30px;
@@ -69,13 +63,23 @@
             .content{
                 position: relative;
                 z-index: 2;
+                
+                .btn{
+                }
+
+                h2{
+                    justify-content: center;
+                    display: flex;
+                    font-weight: 300;
+                }
+                
                 .tags{
                     margin: 10px 0;
 
                     .tag{
                         text-align: left;
                         display:inline-block;
-                        font-size: $contentSize;
+                        font-size: 13px;
                         padding: 5px;
                         color: $mainColor;
                         margin: 3px;
@@ -87,7 +91,7 @@
                 
 
                 p{
-                    font-size: $contentSize;
+                    font-size: 13px;
                     line-height: 24px;
                     font-family: inherit;
                     margin-bottom: 10px;
@@ -95,8 +99,7 @@
 
                 .projectCover{
                     border-radius: 30px;
-                    width: 350px;
-                    height: 250px;
+                    height: 30%;
                     margin: 0 auto;
                     overflow: hidden;
                     object-fit:contain;
@@ -144,5 +147,18 @@
     .swiper-wrapper {
         overflow: visible;
         list-style: none;
+    }
+
+    .no-projects{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+
+        h2{
+            font-size: 50px;
+            font-weight: 300;
+            display: flex;
+        }
     }
 }

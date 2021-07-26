@@ -9,18 +9,12 @@
         align-self: center;
         text-align: center;
         overflow: hidden;
-        max-height: 22vh;
         overflow: hidden;
 
         h1{
             font-size: $headerSize;
-            margin-bottom: 10px;
-        overflow: hidden;
-
-
-            @include mobile{
-                font-size: 20px;
-            }
+            margin-bottom: 5px;
+            overflow: hidden;
         }
 
         .description{
@@ -29,7 +23,7 @@
             font-family: 'Roboto Mono', monospace;
             font-weight: 300;
             font-size: $contentSize;
-            padding-bottom: 50px;
+            padding-bottom: 10px;
             span{
                 font-family: inherit;
             }
@@ -54,7 +48,6 @@
     
 
     ul{
-        max-height: 10vh;
         margin: 10px;
         padding:0;
         list-style: none;
@@ -65,4 +58,39 @@
         overflow: hidden;
     }
 
+    .swiper-wrapper {
+        overflow: visible;
+        list-style: none;
+        // margin-left: 40px;
+    }
+
+    .swiper-container{
+        max-width: 70vw;
+    }
+
+    .swiper-slide {
+        width: 90px;
+    }
+
+    .swiper-button-prev{
+        color: rgba(0, 0, 0, 0);
+        background-image: url("./prev.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        margin-left: -12px;
+    }
+
+    .swiper-button-next{
+        color: rgba(0, 0, 0, 0);
+        background-image: url("./next.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        margin-right: -12px;
+    }
+
+    .filler{
+        width: 20px;
+    }
 }

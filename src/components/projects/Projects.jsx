@@ -21,6 +21,8 @@ import SwiperCore, {
 import { projectData, projectTags } from "./projectData";
 import Button from '@material-ui/core/Button';
 
+import window from "../../utils/window";
+
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
@@ -118,6 +120,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Projects() {
+    const { height } = window();
     const fixedOptions = [];
     const [tags, setTags] = useState([...fixedOptions]);
     const [projects, setProjects] = useState([]);
@@ -195,18 +198,27 @@ export default function Projects() {
                                     <img src={d.img} alt=""></img>
                                 </div>
 
-                                <p>
-                                    {d.description}
-                                    <br />
-                                    <div className="timeframe">{d.timeframe}</div>
-                                </p>
-                                <Button variant="contained" color="primary">Find out more</Button>
+                                {
+                                    height - 350 < 540 ?
+                                        <p></p> :
+                                        <p>
+                                            {d.description}
+                                            <br />
+                                            <div className="timeframe">{d.timeframe}</div>
+                                        </p>
+                                }
+
+                                <Button variant="contained" color="primary" className="btn">Find out more</Button>
                             </div>
                         </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <h2 style={projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }}>No Project Matches...</h2>
+            <div className="no-projects">
+                <h2 style={
+                    projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }
+                }>...No Project Matches...</h2>
+            </div>
         </div>
     )
 }
