@@ -44,7 +44,8 @@ export default function Modules({ selected }) {
     };
 
     const { height, width } = window();
-    const maxItemsPerPage = ((width * 0.7 / (220 + 22)) >> 0 === 0 ? 1 : Math.floor(width * 0.7 / (220 + 22))) *
+    const numHorizontalItems = ((width * 0.7 / (220 + 22)) >> 0 === 0 ? 1 : Math.floor(width * 0.7 / (220 + 22)));
+    const maxItemsPerPage = numHorizontalItems *
         (((height - 350) / (150 + 20)) >> 0 === 0 ? 1 : Math.floor(((height - 350) / (150 + 20))));
 
     useEffect(() => {
@@ -103,7 +104,7 @@ export default function Modules({ selected }) {
                     onChange={handleChange}
                 />
             </div>
-            <div className="container">
+            <div className="container" style={{ gridTemplateColumns: "repeat(" + numHorizontalItems + ",1fr)" }}>
                 {items.map((d) => (
                     <div className="item">
                         <img src={"assets/modules/" + d.id + ".jpg"} alt="" />
