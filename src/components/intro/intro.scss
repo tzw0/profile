@@ -11,8 +11,7 @@
     }
 
     
-    .imageContainer{
-       
+    .imageContainer{       
 
         .me{
             overflow: hidden;
@@ -70,11 +69,10 @@
     }
 
     &.mobile{
-        flex-direction: column;
+        flex-wrap: wrap;
         
         .imageContainer{
-        
-
+            display: flex;
             .me{
                 overflow: hidden;
                 position: absolute;
@@ -83,7 +81,7 @@
                 z-index: 5;
                 
                 img{
-                    height: 40vh;                    
+                    max-height: 70vh;                    
                     filter: brightness(50%);
                 }
             }
@@ -92,7 +90,10 @@
         .introParagraph{
             z-index: 10;
             
-            margin: 50px auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: calc(15vh + 10px);
             width: 80vw;
 
             h1{
@@ -100,7 +101,6 @@
             }
 
             p{
-                line-height: 50px;
                 font-weight: 300;
                 color: $tertiaryColor;
                 font-size: $mobileContentLargeSize;
