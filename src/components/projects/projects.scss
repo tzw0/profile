@@ -20,6 +20,7 @@
         margin: 20px 0px;
         justify-content: center;
         align-items: center;
+        font-size: $contentSize;
     }
 
     .swiper-pagination-bullet {
@@ -65,9 +66,6 @@
                 position: relative;
                 z-index: 2;
                 
-                .btn{
-                }
-
                 h2{
                     justify-content: center;
                     display: flex;
@@ -160,6 +158,59 @@
             font-size: $ProjectCardHeader;
             font-weight: 300;
             display: flex;
+        }
+    }
+
+    &.mobile{
+
+        .controls {
+            margin-bottom: 50px;
+            font-size: $mobileContentSize;
+        }
+        
+        .swiper-slide {
+            max-width: none;
+            max-height: none;
+            min-height: none;
+            min-width: none;
+            height: 950px;
+            width: 650px;
+        
+            .card {
+                
+                .content{
+                    h2{
+                        font-size: $mobileContentLargeSize;
+                    }
+                    
+                    .tags{
+    
+                        .tag{
+                            font-size: $mobileContentSize;
+                            border-radius: 15px;
+                        }
+                    }
+                    
+    
+                    p{
+                        font-size: $mobileContentSize;
+                        line-height: $mobileContentLargeSize;
+                        font-family: inherit;
+                        margin-bottom: 10px;
+                    }
+    
+                    .projectCover{
+    
+                        img{
+                        }
+                    }
+    
+                    .timeframe{
+                        font-size: $mobileContentSize;
+                    }
+    
+                }
+            }
         }
     }
 }
