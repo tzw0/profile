@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { skillData } from "./skillData";
 import { Button } from "@material-ui/core";
 import { useState } from "react";
+import { ifMobile, ResponsiveHeader } from "../../utils/mobile";
 
 const Panel = ((props) => {
     return (
@@ -41,13 +42,13 @@ class PanelCollection extends React.Component {
 
         return (
             <div style={{ gridRow: this.state.expanded ? rowSpan : "span 1", gridColumn: "span 1" }}>
-                <div className="panel_collection">
+                <div className="panel_collection" onClick={() => {
+                    this.setState({ expanded: !this.state.expanded })
+                    this.props.resetExpandedAll()
+                }}>
                     <div className="collection_header">
-                        <h2><SkillIcon fontSize='medium' />&nbsp;{this.props.title}</h2>
-                        <span className="expand_btn" onClick={() => {
-                            this.setState({ expanded: !this.state.expanded })
-                            this.props.resetExpandedAll()
-                        }}> {this.state.expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}</span>
+                        <h2><SkillIcon fontSize='inherit' />&nbsp;{this.props.title}</h2>
+                        <span className="expand_btn"> {this.state.expanded ? <ExpandLessIcon fontSize="inherit" /> : <ExpandMoreIcon fontSize="inherit" />}</span>
                     </div>
                     <div className={this.state.expanded ? "panels active" : "panels"}>
                         {this.props.panels.map((p) => (
@@ -67,13 +68,13 @@ export default function Skills() {
     })
 
     return (
-        <div className="skills" id="skills">
+        <div className={ifMobile("skills")} id="skills">
             <div className="header">
-                <h1>Skills</h1>
+                <ResponsiveHeader title="Skills" />
                 <span className="subtitle">
-                    <Button className="btn" variant="contained" color="primary" size="small" onClick={() => setExpandAll(false)}><ExpandLessIcon /></Button>
+                    <Button className="btn" variant="contained" color="primary" size="small" onClick={() => setExpandAll(false)}><ExpandLessIcon fontSize="inherit" /></Button>
                     Technical Skills I Know
-                    <Button className="btn" variant="contained" color="secondary" size="small" onClick={() => setExpandAll(true)}><ExpandMoreIcon /></Button>
+                    <Button className="btn" variant="contained" color="secondary" size="small" onClick={() => setExpandAll(true)}><ExpandMoreIcon fontSize="inherit" /></Button>
                 </span>
 
             </div>

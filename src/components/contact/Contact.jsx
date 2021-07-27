@@ -2,7 +2,7 @@ import "./contact.scss"
 import emailjs from 'emailjs-com';
 import React, { useState } from "react";
 import validator from 'validator'
-import { ResponsiveButton } from "../../utils/mobile";
+import { ifMobile, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 const Result = () => {
     return (
@@ -29,9 +29,9 @@ export default function Contact() {
 
 
     return (
-        <div className="contact" id="contact">
+        <div className={ifMobile("contact")} id="contact">
             <div className="header">
-                <h1>Contact Me</h1>
+                <ResponsiveHeader title="Contact Me" />
             </div>
             <div className="messageBody">
                 <form action="" onSubmit={sendEmail}>

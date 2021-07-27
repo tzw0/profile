@@ -3,10 +3,11 @@ import {
     Mail, GitHub
 } from "@material-ui/icons"
 import { ReactComponent as Logo } from './logo.svg';
+import { ifMobile } from '../../utils/mobile';
 
 export default function Topbar({ menuOpen, setMenuOpen }) {
     return (
-        <div className={"topbar " + (menuOpen && "active")}>
+        <div className={ifMobile("topbar " + (menuOpen && "active"))}>
             <div className="wrapper">
                 <div className="left">
                     <a href="#intro" className="logo">

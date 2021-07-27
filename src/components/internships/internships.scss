@@ -118,4 +118,39 @@
         }
     }
 
+    &.mobile{
+        .container{
+            .card{
+                min-width: 550px;
+                min-height: 550px;
+                width: 36vh;
+                height: 36vh;
+                
+                .box{
+                    
+                    .content{
+
+                        h2{
+                            font-size: $mobileInternshipCardHeader;
+                        }
+
+                        .contentBx{
+                            h3{
+                                font-size: $mobileContentLargeSize;
+
+                                span{
+                                    font-size: $mobileContentSize;
+                                }
+                            }
+                        }
+
+                        row{
+                            font-size: $mobileContentSize;
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

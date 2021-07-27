@@ -34,16 +34,17 @@
         }
 
         .formWord{
-
+            padding: 0 20px;
             margin-top: 20px;
+            font-size: $contentSize;
             span{
                 line-height: 40px;
-                font-size: $contentSize;
+                font-size:inherit;
             }
 
             input{
                 border: none;
-                font-size: $contentSize;
+                font-size:inherit;
                 color: $mainColor;
                 background-color: #333;
                 width: 100%;
@@ -65,7 +66,7 @@
 
             textarea{
                 transition: 1s ease;
-                font-size:$contentSize;
+                font-size:inherit;
                 margin-bottom: 10px;
                 outline: none;
                 box-shadow: none;
@@ -88,6 +89,30 @@
 
         .row{
             margin-top: 20px;
+        }
+    }
+
+    &.mobile{
+        .messageBody{
+            .invalid-email{
+                h4{
+                    font-size: $mobileContentSize;
+                }
+            }
+
+            .formWord{
+                margin-bottom: 10px;
+                font-size: $mobileContentLargeSize;
+
+                input{
+                    margin: 30px 0;
+                }
+
+                textarea{
+                    height: 300px;
+                    margin: 30px 0;
+                }
+            }
         }
     }
 }

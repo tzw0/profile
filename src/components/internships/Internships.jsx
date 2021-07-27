@@ -1,11 +1,11 @@
 import "./internships.scss"
-import { ResponsiveButton } from "../../utils/mobile";
+import { ifMobile, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 export default function Internships() {
     return (
-        <div className="internships" id="internships">
+        <div className={ifMobile("internships")} id="internships">
             <div className="header">
-                <h1>Internships</h1>
+                <ResponsiveHeader title="Internships" />
             </div>
 
             <div className="container">

@@ -8,6 +8,7 @@ import Skills from "./components/skills/Skills"
 import './app.scss'
 import { useState } from "react"
 import Menu from "./components/menu/Menu"
+import { ifMobile } from "./utils/mobile";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,7 +16,7 @@ function App() {
     <div className="app">
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div className="sections">
+      <div className={ifMobile("sections")}>
         <Intro />
         <Skills />
         <Education />

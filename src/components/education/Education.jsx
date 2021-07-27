@@ -1,6 +1,5 @@
 import EducationList from "../educationList/EducationList"
 import { useState } from "react"
-import Button from '@material-ui/core/Button';
 import "./education.scss"
 import transcript from './transcript.pdf'
 import Modules from "../modules/Modules";
@@ -9,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
-import { ifMobile } from "../../utils/mobile";
+import { ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 
 export default function Education() {
@@ -65,7 +64,7 @@ export default function Education() {
         <div className="education" id="education">
 
             <div className="header">
-                <h1>EDUCATION</h1>
+                <ResponsiveHeader title="Education" />
                 <div className="description">
                     Bachelor of Engineering in
                     <br /><h2> <a href="https://ceg.nus.edu.sg/" target="_blank" rel="noreferrer">Computer Engineering (Hons)</a> </h2>
@@ -73,7 +72,7 @@ export default function Education() {
                     <br /><span>CAP:{" "}<h2>4.63/5</h2></span>
                     <br /><br />
                     <a href={transcript} target="_blank" rel="noreferrer">
-                        <Button className={ifMobile("btn")} variant="contained" color="primary">View Transcript</Button>
+                        <ResponsiveButton color="primary" title="View Transcript" />
                     </a>
                 </div>
             </div>

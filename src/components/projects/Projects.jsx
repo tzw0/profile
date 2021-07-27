@@ -22,6 +22,7 @@ import { projectData, projectTags } from "./projectData";
 import Button from '@material-ui/core/Button';
 
 import window from "../../utils/window";
+import { ResponsiveHeader } from "../../utils/mobile";
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -134,7 +135,7 @@ export default function Projects() {
     return (
         <div className="projects" id="projects">
             <div className="header">
-                <h1>Projects</h1>
+                <ResponsiveHeader title="Projects" />
             </div>
             <div className="controls">
                 <Autocomplete

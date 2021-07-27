@@ -6,7 +6,7 @@
     background-color: $background;
     color: $mainColor;
     position: fixed;
-    z-index: 30;
+    z-index: 1000;
     transition: all 1s ease;
 
     .wrapper{
@@ -38,6 +38,7 @@
                 display: flex;
                 align-items: center;
                 margin-left: 30px;
+                font-size: $contentSize;
 
                 @include mobile{
                     display: none;
@@ -49,11 +50,12 @@
                 }
 
                 span{
-                    font-size: $contentSize;
+                    font-size: inherit;
                     font-weight: 500;
 
                     a{
                         font-weight: inherit;
+                        font-size: inherit;
                         color: inherit;
                         text-decoration: inherit;
                     }
@@ -82,6 +84,42 @@
                     background-color: $mainColor;
                     transform-origin: left;
                     transition: all 2s ease;
+                }
+            }
+        }
+    }
+
+    &.mobile{
+        overflow: visible;
+        background-color: rgba(0, 0, 0, 0);
+        .wrapper{
+            .left{
+                .itemContainer{
+                    display: none;
+                }
+
+                .logo{
+                    .logoIcon{
+                        margin-top: 10px;
+                        width: 80px;
+                        height: auto;
+                    }
+                }
+            }
+
+            .right {
+
+                .hamburger{
+                    width: 74px;
+                    height: 54px;
+                    cursor: pointer;
+    
+                    span{
+                        width: 100%;
+                        height: 5px;
+                        transform-origin: left;
+                        transition: all 2s ease;
+                    }
                 }
             }
         }

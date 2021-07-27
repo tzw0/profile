@@ -4,7 +4,7 @@ $tertiaryColor: rgb(200, 200, 200);
 $highlight: beige;
 $background: rgb(23, 17, 25);
 $outline: rgb(26, 20, 27);
-$menuColor: rgba(0, 0, 0, 0.8);
+$menuColor: rgba(23, 17, 25, 0.95);
 $moduleHighlight: rgb(150, 0, 55);
 $primarySelect: rgb(74, 89, 199);
 $secondarySelect: rgb(235, 0, 85);
@@ -17,8 +17,9 @@ $contentXLargeSize: 25px;
 
 //Internship
 $internshipCardHeader: 60px;
+$mobileInternshipCardHeader: 90px;
 
-//Internship
+//Project
 $ProjectCardHeader: 50px;
 
 //mobile
@@ -37,7 +38,9 @@ h1{
     font-size: 35px;
 
     &.mobile{
-        font-size: 60px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-size: 75px;
     }
 }
 
@@ -45,6 +48,7 @@ div .btn{
     font-size: 14px;
 
     &.mobile{
-        font-size: 40px;
+        border-radius: 20px;
+        font-size: 35px;
     }
 }
