@@ -37,7 +37,7 @@
                 color: $secondColor;
                 font-family: inherit;
                 display: inline;
-                font-size: $contentSize;
+                font-size: inherit;
                 font-weight: 500;
                 font-style: bold;
             }
@@ -68,6 +68,7 @@
     }
 
     .swiper-slide {
+        font-size: $contentSize;
         width: 90px;
     }
 
@@ -91,5 +92,23 @@
 
     .filler{
         width: 20px;
+    }
+
+    &.mobile{
+        .header{
+            .description{
+                font-size: $mobileContentSize;
+
+            }
+        }
+
+        .swiper-slide{
+            font-size: $mobileContentSize;
+            width: 200px;
+        }
+
+        .swiper-container{
+            margin: 20px 0;
+        }
     }
 }

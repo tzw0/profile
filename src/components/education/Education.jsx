@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
-import { ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
+import { ifMobile, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 
 export default function Education() {
@@ -61,7 +61,7 @@ export default function Education() {
     ]
 
     return (
-        <div className="education" id="education">
+        <div className={ifMobile("education")} id="education">
 
             <div className="header">
                 <ResponsiveHeader title="Education" />
