@@ -15,3 +15,7 @@ export const ResponsiveHeader = ((props) => {
         <h1 className="mobile">{props.title}</h1>
         : <h1>{props.title}</h1>;
 });
+
+export const isMobilePotrait = (() => {
+    return isMobile && !IsLandscape();
+})
