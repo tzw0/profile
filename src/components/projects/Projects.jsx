@@ -69,6 +69,61 @@ function filter(tags_) {
     return projects_
 }
 
+const useMobileStyles = makeStyles((theme) => ({
+    fontSize: "inherit",
+
+    root: {
+        "& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
+            transform: "translate(34px, 20px) scale(1);"
+        }
+    },
+    inputRoot: {
+        color: "white",
+        fontSize: "inherit",
+        '&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child': {
+            paddingLeft: 26
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "white"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "white"
+        },
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#DF0252"
+        }
+    },
+    paper: {
+        background: "#333",
+        color: "white",
+        fontSize: "30px",
+    },
+    option: {
+        // Hover with light-grey
+        '&[data-focus="true"]': {
+            backgroundColor: '#4452B8',
+            borderColor: 'transparent',
+        },
+        // Selected has dark-grey
+        '&[aria-selected="true"]': {
+            backgroundColor: "#DF0252",
+            borderColor: 'transparent',
+        },
+    },
+    clearIndicator: {
+        color: "white",
+        fontSize: "inherit",
+    },
+    popupIndicator: {
+        color: "white",
+        fontSize: "inherit",
+    },
+    tag: {
+        fontSize: "inherit",
+        height: "50px",
+    }
+}));
+
 const useStyles = makeStyles((theme) => ({
     fontSize: "inherit",
 
@@ -96,7 +151,6 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         background: "#333",
         color: "white",
-        // fontSize: isMobilePotrait() ? "30px" : "14px",
     },
     option: {
         // Hover with light-grey
@@ -120,7 +174,6 @@ const useStyles = makeStyles((theme) => ({
     },
     tag: {
         fontSize: "inherit",
-        // height: isMobilePotrait() ? "50px" : "30px",
     }
 }));
 
@@ -135,6 +188,7 @@ export default function Projects() {
     }, [tags])
 
     const classes = useStyles();
+    const mobileClasses = useMobileStyles();
 
     return (
         <div className={ifMobile("projects")} id="projects">
@@ -143,7 +197,7 @@ export default function Projects() {
             </div>
             <div className="controls">
                 <Autocomplete
-                    classes={classes}
+                    classes={isMobilePotrait() ? mobileClasses : classes}
                     multiple
                     limitTags={5}
                     id="fixed-tags-demo"
