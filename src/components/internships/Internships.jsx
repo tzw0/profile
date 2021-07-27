@@ -1,5 +1,5 @@
 import "./internships.scss"
-import { Button } from "@material-ui/core";
+import { ResponsiveButton } from "../../utils/mobile";
 
 export default function Internships() {
     return (
@@ -17,7 +17,7 @@ export default function Internships() {
                                 <h3>Software Engineer<br /><span>Electronic Systems Division</span></h3>
                             </div>
                             <row>jun 20 - aug 20</row>
-                            <Button className="btn" variant="contained" color="primary"> find out more</Button>
+                            <ResponsiveButton color="primary" title="find out more" />
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ export default function Internships() {
                                 <h3>TechOps Engineer<br /><span>SPACE Team</span></h3>
                             </div>
                             <row>jan 21 - jul 21</row>
-                            <Button className="btn" variant="contained" color="primary"> find out more</Button>
+                            <ResponsiveButton color="primary" title="find out more" />
                         </div>
                     </div>
                 </div>

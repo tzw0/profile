@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
+import { ifMobile } from "../../utils/mobile";
 
 
 export default function Education() {
@@ -72,7 +73,7 @@ export default function Education() {
                     <br /><span>CAP:{" "}<h2>4.63/5</h2></span>
                     <br /><br />
                     <a href={transcript} target="_blank" rel="noreferrer">
-                        <Button variant="contained" color="primary">View Transcript</Button>
+                        <Button className={ifMobile("btn")} variant="contained" color="primary">View Transcript</Button>
                     </a>
                 </div>
             </div>

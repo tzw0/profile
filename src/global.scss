@@ -10,11 +10,41 @@ $primarySelect: rgb(74, 89, 199);
 $secondarySelect: rgb(235, 0, 85);
 
 $width:768px;
-$headerSize: 35px;
 $contentSize: 14px;
+$contentLargeSize: 18px;
+$contentSmallSize: 11px;
+$contentXLargeSize: 25px;
+
+//Internship
+$internshipCardHeader: 60px;
+
+//Internship
+$ProjectCardHeader: 50px;
+
+//mobile
+$mobileContentSize: 30px;
+$mobileContentLargeSize: 40px;
+$mobileContentSmallSize: 25px;
+$mobileContentXLargeSize: 60px;
 
 @mixin mobile {
     @media (max-width: #{$width}){
         @content
+    }
+}
+
+h1{
+    font-size: 35px;
+
+    &.mobile{
+        font-size: 60px;
+    }
+}
+
+div .btn{
+    font-size: 14px;
+
+    &.mobile{
+        font-size: 40px;
     }
 }

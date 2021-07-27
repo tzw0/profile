@@ -45,12 +45,12 @@
 
         h1{
             margin-bottom: 20px;
-            font-size: $headerSize;
         }
 
         p{
             font-weight: 300;
             color: $tertiaryColor;
+            font-size: $contentLargeSize;
         }
 
         a{
@@ -63,8 +63,67 @@
             flex-direction: row;
             margin-top: 30px;
             
-            .portfolio{
-                margin-left: 30px;
+            .btn{
+                margin-right: 30px;
+            }
+        }
+    }
+
+    &.mobile{
+        flex-direction: column;
+        
+        .imageContainer{
+        
+
+            .me{
+                overflow: hidden;
+                position: absolute;
+                left: 15vw;
+                top: 50px;
+                z-index: 5;
+                
+                img{
+                    height: 60vh;
+                    min-height: 400px;
+                    
+                    filter: brightness(50%);
+                }
+            }
+        }
+
+        .introParagraph{
+            z-index: 10;
+            
+            margin: 50px auto;
+            width: 80vw;
+
+            h1{
+                margin-bottom: 20px;
+            }
+
+            p{
+                font-weight: 300;
+                color: $tertiaryColor;
+                font-size: $mobileContentLargeSize;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            .buttonContainer{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                margin-top: 30px;
+
+                .btn{
+                    margin-right: 50px;
+                }
+                
+                .portfolio{
+                    margin-left: 30px;
+                }
             }
         }
     }

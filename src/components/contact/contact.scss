@@ -8,13 +8,6 @@
         flex-direction: column;
         align-items: center;
     
-        h1{
-            font-size: $headerSize;
-    
-            @include mobile{
-                font-size: 20px;
-            }
-        }
     }
 
     .messageBody{
@@ -45,12 +38,12 @@
             margin-top: 20px;
             span{
                 line-height: 40px;
-                font-size: large;
+                font-size: $contentSize;
             }
 
             input{
                 border: none;
-                font-size: medium;
+                font-size: $contentSize;
                 color: $mainColor;
                 background-color: #333;
                 width: 100%;
@@ -72,7 +65,7 @@
 
             textarea{
                 transition: 1s ease;
-                font-size:medium;
+                font-size:$contentSize;
                 margin-bottom: 10px;
                 outline: none;
                 box-shadow: none;

@@ -12,9 +12,7 @@
     align-items: center;
 
     h1{
-        font-size: $headerSize;
         z-index: 10;
-
     }
 
     .subtitle{
@@ -39,7 +37,7 @@
         display: flex;
         justify-content: space-between;
         h2{
-            font-size: 19px;
+            font-size: $contentLargeSize;
             font-weight: 300;
             display: flex;
         }
@@ -100,7 +98,7 @@
 
         h3{
             font-weight: 500;
-            font-size: 15px;
+            font-size: $contentSize;
         }
     }
     

@@ -1,8 +1,8 @@
 import "./contact.scss"
 import emailjs from 'emailjs-com';
 import React, { useState } from "react";
-import { Button } from "@material-ui/core";
 import validator from 'validator'
+import { ResponsiveButton } from "../../utils/mobile";
 
 const Result = () => {
     return (
@@ -52,9 +52,9 @@ export default function Contact() {
 
                     </div>
                     {validator.isEmail(email) ?
-                        <Button className="btn" variant="contained" color="primary" type="submit"> SUBMIT</Button> :
+                        <ResponsiveButton color="primary" type="submit" title="SUBMIT" /> :
                         <div className="invalid-email">
-                            <Button className="btn" variant="contained" color="primary" type="button"> SUBMIT</Button>
+                            <ResponsiveButton color="primary" type="button" title="SUBMIT" />
                             <h4>Please enter a valid email :)</h4>
                         </div>
                     }

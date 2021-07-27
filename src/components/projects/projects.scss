@@ -9,7 +9,6 @@
 
         h1{
             z-index: 30;
-            font-size: $headerSize;
         }
     }
 
@@ -81,7 +80,7 @@
                     .tag{
                         text-align: left;
                         display:inline-block;
-                        font-size: 13px;
+                        font-size: $contentSmallSize;
                         padding: 5px;
                         color: $mainColor;
                         margin: 3px;
@@ -93,8 +92,8 @@
                 
 
                 p{
-                    font-size: 13px;
-                    line-height: 24px;
+                    font-size: $contentSize;
+                    line-height: $contentXLargeSize;
                     font-family: inherit;
                     margin-bottom: 10px;
                 }
@@ -158,7 +157,7 @@
         margin-top: 100px;
 
         h2{
-            font-size: 50px;
+            font-size: $ProjectCardHeader;
             font-weight: 300;
             display: flex;
         }
