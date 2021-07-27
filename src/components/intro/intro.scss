@@ -83,9 +83,7 @@
                 z-index: 5;
                 
                 img{
-                    height: 60vh;
-                    min-height: 400px;
-                    
+                    height: 40vh;                    
                     filter: brightness(50%);
                 }
             }
@@ -102,6 +100,7 @@
             }
 
             p{
+                line-height: 50;
                 font-weight: 300;
                 color: $tertiaryColor;
                 font-size: $mobileContentLargeSize;
