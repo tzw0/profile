@@ -176,7 +176,7 @@ export default function Projects() {
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={50}
-                // freeMode={!isMobilePotrait()}
+                freeMode={!isMobilePotrait()}
                 centeredSlides={true}
                 pagination={{
                     "clickable": true,
