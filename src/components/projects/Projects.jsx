@@ -19,10 +19,9 @@ import SwiperCore, {
     Pagination
 } from 'swiper/core';
 import { projectData, projectTags } from "./projectData";
-import Button from '@material-ui/core/Button';
 
 import window from "../../utils/window";
-import { ResponsiveHeader } from "../../utils/mobile";
+import { ifMobile, isMobilePotrait, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -71,19 +70,17 @@ function filter(tags_) {
 }
 
 const useStyles = makeStyles((theme) => ({
+    fontSize: "inherit",
+
     root: {
         "& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
-            // Default transform is "translate(14px, 20px) scale(1)""
-            // This lines up the label with the initial cursor position in the input
-            // after changing its padding-left.
             transform: "translate(34px, 20px) scale(1);"
         }
     },
     inputRoot: {
         color: "white",
-        // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
+        fontSize: "inherit",
         '&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child': {
-            // Default left padding is 6px
             paddingLeft: 26
         },
         "& .MuiOutlinedInput-notchedOutline": {
@@ -99,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         background: "#333",
         color: "white",
+        // fontSize: isMobilePotrait() ? "30px" : "14px",
     },
     option: {
         // Hover with light-grey
@@ -113,10 +111,16 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     clearIndicator: {
-        color: "white"
+        color: "white",
+        fontSize: "inherit",
     },
     popupIndicator: {
-        color: "white"
+        color: "white",
+        fontSize: "inherit",
+    },
+    tag: {
+        fontSize: "inherit",
+        // height: isMobilePotrait() ? "50px" : "30px",
     }
 }));
 
@@ -133,7 +137,7 @@ export default function Projects() {
     const classes = useStyles();
 
     return (
-        <div className="projects" id="projects">
+        <div className={ifMobile("projects")} id="projects">
             <div className="header">
                 <ResponsiveHeader title="Projects" />
             </div>
@@ -172,7 +176,7 @@ export default function Projects() {
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={50}
-                freeMode={true}
+                // freeMode={!isMobilePotrait()}
                 centeredSlides={true}
                 pagination={{
                     "clickable": true,
@@ -209,7 +213,7 @@ export default function Projects() {
                                         </p>
                                 }
 
-                                <Button variant="contained" color="primary" className="btn">Find out more</Button>
+                                <ResponsiveButton color="primary" className="btn" title="Find out more" />
                             </div>
                         </div>
                     </SwiperSlide>
