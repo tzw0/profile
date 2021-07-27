@@ -121,6 +121,9 @@ const useMobileStyles = makeStyles((theme) => ({
     tag: {
         fontSize: "inherit",
         height: "50px",
+
+        "& .MuiChip-deleteIcon": {
+        },
     }
 }));
 

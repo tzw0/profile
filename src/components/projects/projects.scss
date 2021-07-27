@@ -167,7 +167,15 @@
             margin-bottom: 50px;
             font-size: $mobileContentSize;
         }
+
+        .swiper-button-next{
+            display: none;
+        }
         
+        .swiper-button-prev{
+            display: none;
+        }
+
         .swiper-slide {
             max-width: none;
             max-height: none;
