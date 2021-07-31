@@ -16,7 +16,8 @@ import "swiper/components/navigation/navigation.min.css"
 // import Swiper core and required modules
 import SwiperCore, {
     Navigation,
-    Pagination
+    Pagination,
+    Virtual
 } from 'swiper/core';
 import { projectData, projectTags } from "./projectData";
 
@@ -24,7 +25,7 @@ import window from "../../utils/window";
 import { ifMobile, isMobilePotrait, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 // install Swiper modules
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation, Virtual]);
 
 function filter(tags_) {
     if (tags_.length === 0) {
@@ -230,7 +231,7 @@ export default function Projects() {
                     )}
                 />
             </div>
-            {isMobilePotrait() ?
+            {/* {isMobilePotrait() ?
                 <div>
                     <Swiper
                         slidesPerView={1}
@@ -240,7 +241,8 @@ export default function Projects() {
                         pagination={{
                             "clickable": true,
                         }}
-                        navigation={true}>
+                        navigation={true}
+                        onTransitionEnd>
                         {projects.map((d) => (
                             <SwiperSlide>
                                 <h2>{d.title}</h2>
@@ -249,54 +251,55 @@ export default function Projects() {
                         }
                     </Swiper>
                 </div>
-                :
-                <Swiper
-                    slidesPerView={"auto"}
-                    spaceBetween={50}
-                    freeMode={true}
-                    centeredSlides={true}
-                    pagination={{
-                        "clickable": true,
-                    }}
-                    navigation={true}
-                    className="mySwiper">
-                    {projects.map((d) => (
-                        <SwiperSlide>
-                            <div className="card">
-                                <div className="layer"></div>
-                                <div className="content">
-                                    <h2>{d.title}</h2>
-                                    <div className="tags">
-                                        {d.tags.map((t) => (
-                                            <div className="tag"
-                                                onClick={() => {
-                                                    var tagsSet = new Set(tags)
-                                                    if (tagsSet.has(t)) return;
-                                                    setTags(tags.concat(t));
-                                                }}>{t}</div>
-                                        ))}
-                                    </div>
-                                    <div className="projectCover">
-                                        <img src={d.img} alt=""></img>
-                                    </div>
-
-                                    {
-                                        height - 350 < 540 ?
-                                            <p></p> :
-                                            <p>
-                                                {d.description}
-                                                <br />
-                                                <div className="timeframe">{d.timeframe}</div>
-                                            </p>
-                                    }
-
-                                    <ResponsiveButton color="primary" className="btn" title="Find out more" />
+                : */}
+            <Swiper
+                virtual={isMobilePotrait()}
+                slidesPerView={isMobilePotrait() ? 1 : "auto"}
+                spaceBetween={50}
+                freeMode={!isMobilePotrait()}
+                centeredSlides={true}
+                pagination={{
+                    "clickable": true,
+                }}
+                navigation={true}
+                className="mySwiper">
+                {projects.map((d, index) => (
+                    <SwiperSlide virtualIndex={index}>
+                        <div className="card">
+                            <div className="layer"></div>
+                            <div className="content">
+                                <h2>{d.title}</h2>
+                                <div className="tags">
+                                    {d.tags.map((t) => (
+                                        <div className="tag"
+                                            onClick={() => {
+                                                var tagsSet = new Set(tags)
+                                                if (tagsSet.has(t)) return;
+                                                setTags(tags.concat(t));
+                                            }}>{t}</div>
+                                    ))}
                                 </div>
+                                <div className="projectCover">
+                                    <img src={d.img} alt=""></img>
+                                </div>
+
+                                {
+                                    height - 350 < 540 ?
+                                        <p></p> :
+                                        <p>
+                                            {d.description}
+                                            <br />
+                                            <div className="timeframe">{d.timeframe}</div>
+                                        </p>
+                                }
+
+                                <ResponsiveButton color="primary" className="btn" title="Find out more" />
                             </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            }
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+            {/* } */}
             <div className="no-projects">
                 <h2 style={
                     projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }
