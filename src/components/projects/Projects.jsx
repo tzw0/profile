@@ -230,10 +230,28 @@ export default function Projects() {
                     )}
                 />
             </div>
+            {/* {isMobilePotrait() ?
+                <Swiper
+                    slidesPerView={"auto"}
+                    spaceBetween={50}
+                    freeMode={false}
+                    centeredSlides={true}
+                    pagination={{
+                        "clickable": true,
+                    }}
+                    navigation={true}>
+                    {projects.map((d) => (
+                        <SwiperSlide>
+                            <h2>{d.title}</h2>
+                        </SwiperSlide>
+                    ))
+                    }
+                </Swiper>
+                : */}
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={50}
-                freeMode={!isMobilePotrait()}
+                freeMode={true}
                 centeredSlides={true}
                 pagination={{
                     "clickable": true,
@@ -276,6 +294,7 @@ export default function Projects() {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            {/* } */}
             <div className="no-projects">
                 <h2 style={
                     projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }

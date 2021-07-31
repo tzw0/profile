@@ -74,6 +74,7 @@
                 
                 .tags{
                     margin: 10px 0;
+                    display: none;
 
                     .tag{
                         text-align: left;
@@ -137,7 +138,6 @@
       }
 
     .swiper-container {
-        display: none;
         z-index: 3;
         margin: 0 25px;
         -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0009);
