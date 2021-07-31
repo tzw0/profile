@@ -1,6 +1,7 @@
 import "./projects.scss"
 import React from 'react';
 import { useEffect, useState } from "react"
+import { useSwipeable } from "react-swipeable";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Chip from '@material-ui/core/Chip';
@@ -68,6 +69,7 @@ function filter(tags_) {
 
     return projects_
 }
+
 
 const useMobileStyles = makeStyles((theme) => ({
     fontSize: "inherit",
@@ -187,15 +189,21 @@ export default function Projects() {
     const [projects, setProjects] = useState([]);
     const [projectIndex, setProjectIndex] = useState(0);
 
+    const handlers = useSwipeable({
+        onSwipedRight: (eventData) => setProjectIndex((projectIndex - 1 + projects.length) % projects.length),
+        onSwipedLeft: (eventData) => setProjectIndex((projectIndex + 1) % projects.length),
+    });
+
     useEffect(() => {
         setProjects(filter(tags));
+        setProjectIndex(0);
     }, [tags])
 
     const classes = useStyles();
     const mobileClasses = useMobileStyles();
 
     return (
-        <div className={ifMobile("projects")} id="projects">
+        <div {...handlers} className={ifMobile("projects")} id="projects">
             <div className="header">
                 <ResponsiveHeader title="Projects" />
             </div>
@@ -233,42 +241,21 @@ export default function Projects() {
             </div>
             {isMobilePotrait() ?
                 <div className="mobile-project-container">
-                    <Swiper
-                        onSlideChange={(e) => setProjectIndex(e.activeIndex)}
-                        slidesPerView={1}
-                        spaceBetween={50}
-                        freeMode={false}
-                        centeredSlides={true}
-                        pagination={{
-                            "clickable": true,
-                        }}
-                        navigation={true}>
-                        {projects.map((d) => (
-                            <SwiperSlide>
-                                <h2>{d.title}</h2>
-                            </SwiperSlide>
-                        ))
-                        }
-                    </Swiper>
-
-                    {projects[projectIndex] ?
-                        <div className="tags">
-                            {projects[projectIndex].tags.map((t) => (
-                                <div className="tag"
-                                    onClick={() => {
-                                        var tagsSet = new Set(tags)
-                                        if (tagsSet.has(t)) return;
-                                        setTags(tags.concat(t));
-                                    }}>{t}</div>
-                            ))}
-                        </div> : <div></div>
-                    }
-
                     {projects[projectIndex] ?
                         <div className="card">
-
-
                             <div className="content">
+                                <h2>{projects[projectIndex].title}</h2>
+
+                                <div className="tags">
+                                    {projects[projectIndex].tags.map((t) => (
+                                        <div className="tag"
+                                            onClick={() => {
+                                                var tagsSet = new Set(tags)
+                                                if (tagsSet.has(t)) return;
+                                                setTags(tags.concat(t));
+                                            }}>{t}</div>
+                                    ))}
+                                </div>
 
                                 <div className="projectCover">
                                     <img src={projects[projectIndex].img} alt=""></img>
@@ -283,64 +270,69 @@ export default function Projects() {
                             </div>
 
                             <ResponsiveButton color="primary" className="btn" title="Find out more" />
-
                         </div>
-                        : <div></div>
+                        : <div className="no-projects">
+                            <h2 style={
+                                projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }
+                            }>...No Project Matches...</h2>
+                        </div>
                     }
                 </div>
                 :
-                <Swiper
-                    slidesPerView={"auto"}
-                    spaceBetween={50}
-                    freeMode={true}
-                    centeredSlides={true}
-                    pagination={{
-                        "clickable": true,
-                    }}
-                    navigation={true}
-                    className="mySwiper">
-                    {projects.map((d) => (
-                        <SwiperSlide>
-                            <div className="card">
-                                <div className="layer"></div>
-                                <div className="content">
-                                    <h2>{d.title}</h2>
-                                    <div className="tags">
-                                        {d.tags.map((t) => (
-                                            <div className="tag"
-                                                onClick={() => {
-                                                    var tagsSet = new Set(tags)
-                                                    if (tagsSet.has(t)) return;
-                                                    setTags(tags.concat(t));
-                                                }}>{t}</div>
-                                        ))}
-                                    </div>
-                                    <div className="projectCover">
-                                        <img src={d.img} alt=""></img>
-                                    </div>
+                <div>
+                    <Swiper
+                        slidesPerView={"auto"}
+                        spaceBetween={50}
+                        freeMode={true}
+                        centeredSlides={true}
+                        pagination={{
+                            "clickable": true,
+                        }}
+                        navigation={true}
+                        className="mySwiper">
+                        {projects.map((d) => (
+                            <SwiperSlide>
+                                <div className="card">
+                                    <div className="layer"></div>
+                                    <div className="content">
+                                        <h2>{d.title}</h2>
+                                        <div className="tags">
+                                            {d.tags.map((t) => (
+                                                <div className="tag"
+                                                    onClick={() => {
+                                                        var tagsSet = new Set(tags)
+                                                        if (tagsSet.has(t)) return;
+                                                        setTags(tags.concat(t));
+                                                    }}>{t}</div>
+                                            ))}
+                                        </div>
+                                        <div className="projectCover">
+                                            <img src={d.img} alt=""></img>
+                                        </div>
 
-                                    {
-                                        height - 350 < 540 ?
-                                            <p></p> :
-                                            <p>
-                                                {d.description}
-                                                <br />
-                                                <div className="timeframe">{d.timeframe}</div>
-                                            </p>
-                                    }
+                                        {
+                                            height - 350 < 540 ?
+                                                <p></p> :
+                                                <p>
+                                                    {d.description}
+                                                    <br />
+                                                    <div className="timeframe">{d.timeframe}</div>
+                                                </p>
+                                        }
 
-                                    <ResponsiveButton color="primary" className="btn" title="Find out more" />
+                                        <ResponsiveButton color="primary" className="btn" title="Find out more" />
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <div className="no-projects">
+                        <h2 style={
+                            projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }
+                        }>...No Project Matches...</h2>
+                    </div>
+                </div>
             }
-            <div className="no-projects">
-                <h2 style={
-                    projects.length === 0 ? { visibility: "visible" } : { visibility: "hidden" }
-                }>...No Project Matches...</h2>
-            </div>
         </div>
     )
 }
