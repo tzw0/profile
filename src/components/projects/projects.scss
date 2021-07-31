@@ -40,101 +40,107 @@
         overflow-y: hidden;
         background: #333;
         border-radius: 30px;
+    }
 
-        .card {
-            position: relative;
-            width: auto;
+    .tags{
+        margin: 10px 0;
+
+        .tag{
+            text-align: left;
+            display:inline-block;
+            font-size: $contentSmallSize;
+            padding: 5px;
+            color: $mainColor;
+            margin: 3px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: $secondarySelect;
+        }
+    }
+
+    .card {
+        position: relative;
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+        background: #333 ;
+        padding: 20px 20px;
+        text-align: center;
+        overflow: hidden;
+
+        
+
+        .layer{
+            position: absolute;
+            top: calc(100% - 5px);
+            left: 0;
+            width: 100%;
             height: 100%;
-            margin: 0 auto;
-            background: #333 ;
-            padding: 20px 20px;
-            text-align: center;
-            overflow: hidden;
-
-            .layer{
-                position: absolute;
-                top: calc(100% - 5px);
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient($primarySelect, $secondarySelect);
-                z-index: 1;
-                transition: 0.5s;
-            }
-
-            .content{
-                position: relative;
-                z-index: 2;
-                
-                h2{
-                    justify-content: center;
-                    display: flex;
-                    font-weight: 300;
-                }
-                
-                .tags{
-                    margin: 10px 0;
-
-                    .tag{
-                        text-align: left;
-                        display:inline-block;
-                        font-size: $contentSmallSize;
-                        padding: 5px;
-                        color: $mainColor;
-                        margin: 3px;
-                        cursor: pointer;
-                        border-radius: 10px;
-                        background-color: $secondarySelect;
-                    }
-                }
-                
-
-                p{
-                    font-size: $contentSize;
-                    line-height: $contentXLargeSize;
-                    font-family: inherit;
-                    margin-bottom: 10px;
-                }
-
-                .projectCover{
-                    border-radius: 30px;
-                    height: 30%;
-                    margin: 0 auto;
-                    overflow: hidden;
-                    object-fit:contain;
-
-                    img{
-                        width: 85%;
-                        height: auto;
-                        transition: 0.5s;
-                    }
-                }
-
-                .timeframe{
-                    font-weight: 300;
-                    color: $tertiaryColor;
-                    font-size: $contentSize;
-                }
-
-            }
+            background: linear-gradient($primarySelect, $secondarySelect);
+            z-index: 1;
+            transition: 0.5s;
         }
 
         
-        .card:hover {
 
-            .layer{
-                top:0;
+        .content{
+            position: relative;
+            z-index: 2;
+            
+            h2{
+                justify-content: center;
+                display: flex;
+                font-weight: 300;
+            }
+            
+           
+            
+
+            p{
+                font-size: $contentSize;
+                line-height: $contentXLargeSize;
+                font-family: inherit;
+                margin-bottom: 10px;
             }
 
-            .content{
-                .projectCover{
-                    img{
-                        filter: grayscale(100%);
-                    }
+            .projectCover{
+                border-radius: 30px;
+                height: 30%;
+                margin: 0 auto;
+                overflow: hidden;
+                object-fit:contain;
+
+                img{
+                    width: 85%;
+                    height: auto;
+                    transition: 0.5s;
+                }
+            }
+
+            .timeframe{
+                font-weight: 300;
+                color: $tertiaryColor;
+                font-size: $contentSize;
+            }
+
+        }
+    }
+
+        
+    .card:hover {
+
+        .layer{
+            top:0;
+        }
+
+        .content{
+            .projectCover{
+                img{
+                    filter: grayscale(100%);
                 }
             }
         }
-      }
+    }
 
     .swiper-container {
         z-index: 3;
@@ -238,16 +244,18 @@
         }
 
         .swiper-container {
-            height: 120px;
+            // height: 120px;
+            height: 70vh;
+
         }
 
 
         .swiper-slide {
+            z-index: 30;
             max-width: none;
             max-height: none;
             min-height: none;
             min-width: none;
-            height: 70px;
             background: none;
             border: none;
             border-radius: none;
@@ -260,6 +268,65 @@
                 padding: 20px;
             }
                     
+        }
+
+        .mobile-project-container{
+            position: relative;
+            height: 70vh;
+            justify-content: center;
+            display: flex;
+        }
+
+        .tags{
+            width: 70%;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 80px;
+            z-index: 90;
+            .tag{
+                z-index: 40;
+                font-size: $mobileContentSize;
+                border-radius: 15px;
+            }
+        }
+
+        .card {
+            position: absolute;
+            top: 150px;
+            padding: 50px;
+            background: none;
+            margin: 0 10%;
+
+            
+            
+            .content{
+                h2{
+                    font-size: $mobileContentLargeSize;
+                }
+                
+                
+                
+
+                p{
+                    font-size: $mobileContentSize;
+                    line-height: $mobileContentLargeSize;
+                    font-family: inherit;
+                    margin-bottom: 30px;
+                }
+
+                .timeframe{
+                    font-size: $mobileContentSize;
+                }
+                
+                .projectCover{
+                }
+            }
+
+            .btn{
+                z-index: 40;
+            }
         }
     }
 }

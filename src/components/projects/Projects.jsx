@@ -185,6 +185,7 @@ export default function Projects() {
     const fixedOptions = [];
     const [tags, setTags] = useState([...fixedOptions]);
     const [projects, setProjects] = useState([]);
+    const [projectIndex, setProjectIndex] = useState(0);
 
     useEffect(() => {
         setProjects(filter(tags));
@@ -231,8 +232,9 @@ export default function Projects() {
                 />
             </div>
             {isMobilePotrait() ?
-                <div>
+                <div className="mobile-project-container">
                     <Swiper
+                        onSlideChange={(e) => setProjectIndex(e.activeIndex)}
                         slidesPerView={1}
                         spaceBetween={50}
                         freeMode={false}
@@ -248,6 +250,43 @@ export default function Projects() {
                         ))
                         }
                     </Swiper>
+
+                    {projects[projectIndex] ?
+                        <div className="tags">
+                            {projects[projectIndex].tags.map((t) => (
+                                <div className="tag"
+                                    onClick={() => {
+                                        var tagsSet = new Set(tags)
+                                        if (tagsSet.has(t)) return;
+                                        setTags(tags.concat(t));
+                                    }}>{t}</div>
+                            ))}
+                        </div> : <div></div>
+                    }
+
+                    {projects[projectIndex] ?
+                        <div className="card">
+
+
+                            <div className="content">
+
+                                <div className="projectCover">
+                                    <img src={projects[projectIndex].img} alt=""></img>
+                                </div>
+
+                                <p>
+                                    {projects[projectIndex].description}
+                                    <br />
+                                    <div className="timeframe">{projects[projectIndex].timeframe}</div>
+                                </p>
+
+                            </div>
+
+                            <ResponsiveButton color="primary" className="btn" title="Find out more" />
+
+                        </div>
+                        : <div></div>
+                    }
                 </div>
                 :
                 <Swiper
