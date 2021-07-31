@@ -161,73 +161,6 @@
         }
     }
 
-    &.mobile{
-
-        .controls {
-            margin-bottom: 50px;
-            font-size: $mobileContentSize;
-        }
-
-        .swiper-button-next{
-            display: none;
-        }
-        
-        .swiper-button-prev{
-            display: none;
-        }
-
-        .swiper-slide {
-            max-width: none;
-            max-height: none;
-            min-height: none;
-            min-width: none;
-            // height: 950px;
-            // width: 650px;
-            background: none;
-        
-            .card {
-                padding: 50px;
-                background: #333;
-                
-                height: 950px;
-                width: 650px;
-                border-radius: 30px;
-
-                .layer{
-                }
-                
-                .content{
-                    h2{
-                        font-size: $mobileContentLargeSize;
-                    }
-                    
-                    .tags{
-    
-                        .tag{
-                            font-size: $mobileContentSize;
-                            border-radius: 15px;
-                        }
-                    }
-                    
-    
-                    p{
-                        font-size: $mobileContentSize;
-                        line-height: $mobileContentLargeSize;
-                        font-family: inherit;
-                        margin-bottom: 10px;
-                    }
-    
-                    .timeframe{
-                        font-size: $mobileContentSize;
-                    }
-                    
-                    .projectCover{
-                    }
-                }
-            }
-        }
-    }
-
     // &.mobile{
 
     //     .controls {
@@ -243,29 +176,90 @@
     //         display: none;
     //     }
 
-    //     .swiper-container {
-    //         height: 120px;
-    //     }
-
-
     //     .swiper-slide {
     //         max-width: none;
     //         max-height: none;
     //         min-height: none;
     //         min-width: none;
-    //         height: 70px;
-    //         background: none;
-    //         border: none;
-    //         border-radius: none;
-    //         display: flex;
-    //         flex-direction: column;
+    //         height: 950px;
+    //         width: 650px;
         
-    //         h2{
-    //             font-size: $mobileContentLargeSize;
-    //             text-align: center;
-    //             padding: 20px;
-    //         }
+    //         .card {
+    //             padding: 50px;
+
+    //             .layer{
+    //             }
+                
+    //             .content{
+    //                 h2{
+    //                     font-size: $mobileContentLargeSize;
+    //                 }
                     
+    //                 .tags{
+    
+    //                     .tag{
+    //                         font-size: $mobileContentSize;
+    //                         border-radius: 15px;
+    //                     }
+    //                 }
+                    
+    
+    //                 p{
+    //                     font-size: $mobileContentSize;
+    //                     line-height: $mobileContentLargeSize;
+    //                     font-family: inherit;
+    //                     margin-bottom: 10px;
+    //                 }
+    
+    //                 .timeframe{
+    //                     font-size: $mobileContentSize;
+    //                 }
+                    
+    //                 .projectCover{
+    //                 }
+    //             }
+    //         }
     //     }
     // }
+
+    &.mobile{
+
+        .controls {
+            margin-bottom: 50px;
+            font-size: $mobileContentSize;
+        }
+
+        .swiper-button-next{
+            display: none;
+        }
+        
+        .swiper-button-prev{
+            display: none;
+        }
+
+        .swiper-container {
+            height: 120px;
+        }
+
+
+        .swiper-slide {
+            max-width: none;
+            max-height: none;
+            min-height: none;
+            min-width: none;
+            height: 70px;
+            background: none;
+            border: none;
+            border-radius: none;
+            display: flex;
+            flex-direction: column;
+        
+            h2{
+                font-size: $mobileContentLargeSize;
+                text-align: center;
+                padding: 20px;
+            }
+                    
+        }
+    }
 }
