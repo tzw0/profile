@@ -243,6 +243,7 @@ export default function Projects() {
                 <div className="mobile-project-container">
                     {projects[projectIndex] ?
                         <div className="card">
+                            <h3>← swipe left or right to browse projects →</h3>
                             <div className="content">
                                 <h2>{projects[projectIndex].title}</h2>
 

@@ -170,6 +170,7 @@
 
         .mobile-project-container{
             position: relative;
+
             h2{
                 font-size: $mobileContentLargeSize;
                 text-align: center;
@@ -191,6 +192,12 @@
             padding: 50px;
             background: none;
             margin: 0 10%;
+
+            h3{
+                font-size: $mobileContentSize;
+                font-weight: 300;
+                color: $tertiaryColor;
+            }
 
             .tags{
 
