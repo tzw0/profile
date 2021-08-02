@@ -17,6 +17,7 @@ import { useEffect, useState } from "react"
 import Pagination from '@material-ui/lab/Pagination';
 import window from "../../utils/window"
 import { ifMobile } from "../../utils/mobile";
+import { useSwipeable } from "react-swipeable";
 
 function paginate(page, data, maxItems) {
     var upperBound = data.length > page * maxItems ? page * maxItems : data.length;
@@ -44,6 +45,11 @@ export default function Modules({ selected }) {
     const numVertItems = Math.floor((height - yDisplacement) / cardHeight)
     const numHorizontalItems = numHorItems === 0 ? 1 : numHorItems;
     const maxItemsPerPage = numHorizontalItems * (numVertItems === 0 ? 1 : numVertItems);
+
+    const handlers = useSwipeable({
+        onSwipedRight: (eventData) => setPage((page + maxPages - 2) % maxPages + 1),
+        onSwipedLeft: (eventData) => setPage(page % maxPages + 1),
+    });
 
     useEffect(() => {
         setItems(paginate(page, data, maxItemsPerPage));
@@ -94,7 +100,7 @@ export default function Modules({ selected }) {
     }, [selected, data, maxPages, maxItemsPerPage])
 
     return (
-        <div className={ifMobile("modules")}>
+        <div {...handlers} className={ifMobile("modules")}>
             <div className="pagination" style={paginationStyle}>
                 <Pagination count={maxPages} color="primary"
                     page={page}
