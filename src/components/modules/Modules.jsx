@@ -39,7 +39,7 @@ export default function Modules({ selected }) {
     const { height, width } = window();
     const cardHeight = (isMobile ? 230 + 40 : 150 + 20);
     const cardWidth = (isMobile ? 350 + 40 : 220 + 22);
-    const yDisplacement = isMobile ? 600 : 350;
+    const yDisplacement = isMobile ? 700 : 350;
     const xScale = isMobile ? 0.8 : 0.7;
     const numHorItems = Math.floor(width * xScale / cardWidth)
     const numVertItems = Math.floor((height - yDisplacement) / cardHeight)
