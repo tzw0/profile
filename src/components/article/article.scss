@@ -21,7 +21,6 @@
             }
             .content{
                 margin-top: 70px;
-                width: 100vh;
     
                 max-width: 95%;
                 font-size: $mobileContentSize;
@@ -66,13 +65,6 @@
             }
         }
 
-        .header{
-            h1{
-                text-align: center;
-            }
-            background: $background;
-        }
-
         .content{
             margin-top: 50px;
             overflow-x: visible;
@@ -83,11 +75,23 @@
             padding: 20px;
             color: $mainColor;
             font-size: $contentSize;
+
+            
+            .header{
+                width: 100%;
+                h1{
+                    text-align: center;
+                    width: 100%;
+                }
+                background: $background;
+            }
         
             span{
                 color: $tertiaryColor;
                 font-weight: 300;
                 font-size: inherit;
+                width: 100%;
+                text-align: center;
             }
 
             .body{
@@ -97,6 +101,7 @@
                 .paragraph{
                     padding: 20px;
                     font-size: inherit;
+                    margin-top: 20px;
 
                     h2{
                         font-size: $contentXLargeSize;
