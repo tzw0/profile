@@ -11,7 +11,7 @@ import "swiper/components/navigation/navigation.min.css"
 import { ifMobile, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
 
-export default function Education() {
+export default function Education(props) {
     const [selected, setSelected] = useState("allMods")
     const list = [
         {
@@ -50,14 +50,14 @@ export default function Education() {
             id: "y3s2",
             title: "Year3-Sem2",
         },
-        {
-            id: "y4s1",
-            title: "Year4-Sem1",
-        },
-        {
-            id: "y4s2",
-            title: "Year4-Sem2",
-        },
+        // {
+        //     id: "y4s1",
+        //     title: "Year4-Sem1",
+        // },
+        // {
+        //     id: "y4s2",
+        //     title: "Year4-Sem2",
+        // },
     ]
 
     return (
@@ -93,7 +93,7 @@ export default function Education() {
                 ))}
             </Swiper>
 
-            <Modules selected={selected} />
+            <Modules selected={selected} load={props.load} />
         </div>
     )
 }

@@ -7,7 +7,7 @@ export function ifMobile(className) {
 }
 
 export const ResponsiveButton = ((props) => {
-    return <Button className={ifMobile("btn")} variant="contained" color={props.color} type={props.type}>{props.title}</Button>;
+    return <Button className={ifMobile("btn")} variant="contained" color={props.color} type={props.type} onClick={props.onClick} >{props.title}</ Button>;
 });
 
 export const ResponsiveHeader = ((props) => {

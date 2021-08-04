@@ -182,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Projects() {
+export default function Projects(props) {
     const { height } = window();
     const fixedOptions = [];
     const [tags, setTags] = useState([...fixedOptions]);
@@ -270,7 +270,7 @@ export default function Projects() {
 
                             </div>
 
-                            <ResponsiveButton color="primary" className="btn" title="Find out more" />
+                            <ResponsiveButton color="primary" className="btn" title="Find out more" onClick={() => props.load("projects/" + projects[projectIndex].id)} />
                         </div>
                         : <div className="no-projects">
                             <h2 style={
@@ -312,7 +312,7 @@ export default function Projects() {
                                         </div>
 
                                         {
-                                            height - 350 < 540 ?
+                                            height - 350 < 600 ?
                                                 <p></p> :
                                                 <p>
                                                     {d.description}
@@ -321,7 +321,7 @@ export default function Projects() {
                                                 </p>
                                         }
 
-                                        <ResponsiveButton color="primary" className="btn" title="Find out more" />
+                                        <ResponsiveButton color="primary" className="btn" title="Find out more" onClick={() => props.load("projects/" + d.id)} />
                                     </div>
                                 </div>
                             </SwiperSlide>

@@ -1,4 +1,5 @@
 const electricSkateboard = {
+    "id": "electricSkateboard",
     "img": "assets/projects/electricSkateboard.png",
     "tags": ["arduino", "hardware", "software", "team", "self-initiated"],
     "timeframe": "dec 18 - jan 19",
@@ -7,6 +8,7 @@ const electricSkateboard = {
 }
 
 const bitsnbolts = {
+    "id": "bitsnbolts",
     "img": "assets/projects/bitsnbolts.png",
     "tags": ["esp32", "hardware", "software", "team", "web app", "hackathon", "self-initiated"],
     "timeframe": "may 19 - may 19",
@@ -15,6 +17,7 @@ const bitsnbolts = {
 }
 
 const keysight = {
+    "id": "keysight",
     "img": "assets/projects/keysight.png",
     "tags": ["team", "hackathon", "self-initiated"],
     "timeframe": "may 19 - may 19",
@@ -23,6 +26,7 @@ const keysight = {
 }
 
 const overflow = {
+    "id": "overflow",
     "img": "assets/projects/overflow.png",
     "tags": ["pair", "hardware", "fpga", "game", "EE2026", "module"],
     "timeframe": "mar 19 - apr 19",
@@ -31,6 +35,7 @@ const overflow = {
 }
 
 const musicviz = {
+    "id": "musicviz",
     "img": "assets/projects/musicviz.png",
     "tags": ["arduino", "hardware", "software", "solo", "self-initiated"],
     "timeframe": "feb 19 - feb 19",
@@ -39,6 +44,7 @@ const musicviz = {
 }
 
 const brainxpace = {
+    "id": "brainxpace",
     "img": "assets/projects/brainxpace.png",
     "tags": ["software", "pair", "self-initiated", "CP2106", "web app", "django", "module"],
     "timeframe": "may 19 - jul 19",
@@ -47,6 +53,7 @@ const brainxpace = {
 }
 
 const farmio = {
+    "id": "farmio",
     "img": "assets/projects/farmio.png",
     "tags": ["software", "team", "game", "CS2113T", "module"],
     "timeframe": "aug 19 - nov 19",
@@ -55,6 +62,7 @@ const farmio = {
 }
 
 const electricTrolley = {
+    "id": "electricTrolley",
     "img": "assets/projects/electricTrolley.png",
     "tags": ["esp32", "hardware", "software", "pair", "self-initiated"],
     "timeframe": "may 19 - jun 19",
@@ -63,6 +71,7 @@ const electricTrolley = {
 }
 
 const teledoor = {
+    "id": "teledoor",
     "img": "assets/projects/teledoor.png",
     "tags": ["esp32", "hardware", "software", "solo", "self-initiated"],
     "timeframe": "nov 19 - dec 19",
@@ -71,6 +80,7 @@ const teledoor = {
 }
 
 const brainhack = {
+    "id": "brainhack",
     "img": "assets/projects/brainhack.png",
     "tags": ["software", "mobile app", "team", "flutter", "hackathon", "self-initiated"],
     "timeframe": "jul 20 - jul 20",
@@ -79,6 +89,7 @@ const brainhack = {
 }
 
 const IEEEHack = {
+    "id": "IEEEHack",
     "img": "assets/projects/IEEEHack.png",
     "tags": ["software", "team", "web app", "hackathon", "self-initiated"],
     "timeframe": "mar 20 - mar 20",
@@ -87,6 +98,7 @@ const IEEEHack = {
 }
 
 const furryFantasy = {
+    "id": "furryFantasy",
     "img": "assets/projects/furryFantasy.png",
     "tags": ["software", "react", "web app", "postgres sql", "team", "CS2102"],
     "timeframe": "sep 20 - nov 20",
@@ -95,6 +107,7 @@ const furryFantasy = {
 }
 
 const zhengWen = {
+    "id": "zhengWen",
     "img": "assets/projects/zhengwen.png",
     "tags": ["software", "react", "web app", "solo", "self-initiated"],
     "timeframe": "jul 21 - aug 21",

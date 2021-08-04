@@ -1,7 +1,7 @@
 import "./internships.scss"
 import { ifMobile, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
 
-export default function Internships() {
+export default function Internships(props) {
     return (
         <div className={ifMobile("internships")} id="internships">
             <div className="header">
@@ -17,7 +17,7 @@ export default function Internships() {
                                 <h3>Software Engineer<br /><span>Electronic Systems Division</span></h3>
                             </div>
                             <row>jun 20 - aug 20</row>
-                            <ResponsiveButton color="primary" title="find out more" />
+                            <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships/dso")} />
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ export default function Internships() {
                                 <h3>TechOps Engineer<br /><span>SPACE Team</span></h3>
                             </div>
                             <row>jan 21 - jul 21</row>
-                            <ResponsiveButton color="primary" title="find out more" />
+                            <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships/shopee")} />
                         </div>
                     </div>
                 </div>

@@ -135,7 +135,7 @@ export const skillData = [
                 "percent": 90
             },
             {
-                "skill": "FPGA",
+                "skill": "FPGA (verilog)",
                 "percent": 70
             },
         ],

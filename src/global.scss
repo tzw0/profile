@@ -10,7 +10,7 @@ $primarySelect: rgb(74, 89, 199);
 $secondarySelect: rgb(235, 0, 85);
 
 $width:768px;
-$contentSize: 14px;
+$contentSize: 16px;
 $contentLargeSize: 18px;
 $contentSmallSize: 11px;
 $contentXLargeSize: 25px;
@@ -36,6 +36,7 @@ $mobileContentXLargeSize: 60px;
 
 h1{
     font-size: 35px;
+    text-align: center;
 
     &.mobile{
         margin-top: 20px;
@@ -51,4 +52,8 @@ div .btn{
         border-radius: 20px;
         font-size: 35px;
     }
+}
+
+a {
+    text-decoration: none;
 }

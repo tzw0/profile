@@ -197,14 +197,9 @@ export const y3s2 = [
 ]
 
 export const y4s1 = [
-    CP3880,
-    CP3880,
-    CP3880,
-    CP3880,
 ]
 
 export const y4s2 = [
-    CP3880,
 ]
 
 export const hardware = [

@@ -24,7 +24,7 @@ function paginate(page, data, maxItems) {
     return data.slice((page - 1) * maxItems, upperBound)
 }
 
-export default function Modules({ selected }) {
+export default function Modules({ selected, load }) {
     const [data, setData] = useState([]);
 
     const [page, setPage] = useState(1);
@@ -39,7 +39,7 @@ export default function Modules({ selected }) {
     const { height, width } = window();
     const cardHeight = (isMobile ? 230 + 40 : 150 + 20);
     const cardWidth = (isMobile ? 350 + 40 : 220 + 22);
-    const yDisplacement = isMobile ? 900 : 350;
+    const yDisplacement = isMobile ? 800 : 350;
     const xScale = isMobile ? 0.8 : 0.7;
     const numHorItems = Math.floor(width * xScale / cardWidth)
     const numVertItems = Math.floor((height - yDisplacement) / cardHeight)
@@ -109,7 +109,7 @@ export default function Modules({ selected }) {
             </div>
             <div className="container" style={{ gridTemplateColumns: "repeat(" + numHorizontalItems + ",1fr)" }}>
                 {items.map((d) => (
-                    <div className="item">
+                    <div className="item" onClick={() => load("modules/" + d.id)}>
                         <img src={"assets/modules/" + d.id + ".jpg"} alt="" />
 
                         <h3>{d.title}</h3>
