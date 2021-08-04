@@ -16,7 +16,7 @@ import { ArticleData } from "./components/article/ArticleData";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [articleOpen, setArticleOpen] = useState(false)
-  const [articleID, setArticleID] = useState("test")
+  const [articleID, setArticleID] = useState("internships/shopee")
 
   const loadHandler = () => {
     const swipeUp = new SwipeUp() //will init DOM and listeners,
