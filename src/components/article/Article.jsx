@@ -17,8 +17,8 @@ export const Article = forwardRef((props, ref) => {
     SerialiseArticleData();
 
     return (
-        <div className={ifMobile("article")} ref={ref}>
-            <div className="container">
+        <div className={ifMobile("article")} ref={ref} >
+            <div className="container" >
                 <div className="article-topbar">
                     <a href="#intro" className="logo" onClick={() => props.close()}>
                         <Logo className="logoIcon" />

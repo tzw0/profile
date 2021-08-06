@@ -165,7 +165,7 @@
     &.mobile{
 
         .controls {
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             font-size: $mobileContentSize;
         }
 
@@ -194,10 +194,17 @@
             background: none;
             margin: 0 10%;
 
-            h3{
-                font-size: $mobileContentSize;
-                font-weight: 300;
-                color: $tertiaryColor;
+            .swipe-instructions{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                h3{
+                    font-size: $mobileContentLargeSize;
+                    font-weight: 300;
+                    color: $tertiaryColor;
+                }
             }
 
             .tags{
@@ -216,6 +223,7 @@
                 p{
                     font-size: $mobileContentSize;
                     line-height: $mobileContentLargeSize;
+                    overflow-y: hidden;
                     font-family: inherit;
                     margin-bottom: 30px;
                 }

@@ -80,7 +80,7 @@ export const useAutocompleteMobileStyles = makeStyles((theme) => ({
     },
     inputRoot: {
         color: "white",
-        fontSize: "inherit",
+        fontSize: "40px",
         '&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child': {
             paddingLeft: 26
         },
@@ -95,14 +95,17 @@ export const useAutocompleteMobileStyles = makeStyles((theme) => ({
         }
     },
     groupLabel: {
-        fontSize: "30px"
+        fontSize: "40px"
     },
     paper: {
         background: "#111",
         color: "white",
-        fontSize: "30px",
+        fontSize: "40px",
+    },
+    listbox: {
     },
     option: {
+
         // Hover with light-grey
         '&[data-focus="true"]': {
             backgroundColor: '#4452B8',
@@ -115,12 +118,14 @@ export const useAutocompleteMobileStyles = makeStyles((theme) => ({
         },
     },
     clearIndicator: {
-        color: "white",
-        fontSize: "inherit",
+        // color: "white",
+        display: "none"
+        // fontSize: "inherit",
     },
     popupIndicator: {
-        color: "white",
-        fontSize: "inherit",
+        // color: "white",
+        // fontSize: "inherit",
+        display: "none"
     },
     tag: {
         fontSize: "inherit",
@@ -236,7 +241,7 @@ export default function Projects(props) {
                     style={{ width: "80%", minWidth: "400px", color: "white" }}
                     renderInput={(params) => (
                         <TextField {...params}
-                            variant="outlined" placeholder="Search Project Tags or Project Titles" />
+                            variant="outlined" placeholder="Search Project Tags or Titles" />
                     )}
                 />
             </div>
@@ -244,7 +249,9 @@ export default function Projects(props) {
                 <div className="mobile-project-container">
                     {projects[projectIndex] ?
                         <div className="card">
-                            <h3>← swipe left or right to browse projects →</h3>
+                            <div className="swipe-instructions">
+                                <h3>←</h3> <h3>swipe left or right to browse</h3> <h3>→</h3>
+                            </div>
                             <div className="content">
                                 <h2>{projects[projectIndex].title}</h2>
 

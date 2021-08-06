@@ -32,8 +32,10 @@
 
         .logo{
             color: $mainColor;
+            width: 50px;
 
             .logoIcon{
+                display: none;
                 width: 46px;
                 height: 46px;
             }
@@ -64,6 +66,8 @@
             height: 130px;
 
             .logo{
+                width: 100px;
+
                 .logoIcon{
                     width: 80px;
                     height: auto;
