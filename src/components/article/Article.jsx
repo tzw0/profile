@@ -5,7 +5,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { forwardRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { ArticleData } from './ArticleData';
+import { ArticleData, SerialiseArticleData } from './ArticleData';
 import { useAutocompleteStyles, useAutocompleteMobileStyles } from '../projects/Projects';
 import { isMobilePotrait } from '../../utils/mobile';
 import { ReactComponent as Logo } from './logo.svg';
@@ -14,6 +14,7 @@ import { SeparationKey } from '../../utils/constants';
 export const Article = forwardRef((props, ref) => {
     const classes = useAutocompleteStyles();
     const mobileClasses = useAutocompleteMobileStyles();
+    SerialiseArticleData();
 
     return (
         <div className={ifMobile("article")} ref={ref}>
@@ -45,14 +46,14 @@ export const Article = forwardRef((props, ref) => {
                     </div>
                     <span>{props.data.subtext}</span>
                     {props.data.sections.map((s) => (
-                        <div key={JSON.stringify(s)} className="body">
+                        <div key={s.key} className="body">
                             {s.hasOwnProperty("link") ? <a className="link" href={s.link} rel="noreferrer" target="_blank"><ResponsiveButton title={s.title} color="primary" /></a> : <div></div>}
                             {s.hasOwnProperty("article") ? <div className="link"> <ResponsiveButton title={s.title} color="secondary" onClick={() => props.load(s.article)} /> </div> : <div></div>}
                             {s.hasOwnProperty("paragraph") ?
                                 <div className="paragraph">
                                     {s.title ? <h2>{s.title}</h2> : <div></div>}
                                     <p>{s.paragraph.split("\n").map((i, key) => {
-                                        return <span key={key}><br />{i}</span>
+                                        return <span key={key}><br />{i}<br /></span>
                                     })}</p>
                                 </div> : <div></div>}
                             {s.hasOwnProperty("img") ?

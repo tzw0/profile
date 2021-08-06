@@ -1351,13 +1351,7 @@ const CP3880 =
     ],
 }
 
-const blank = {
-    "header": "",
-    "subtext": ""
-}
-
-export const ArticleData = {
-    "": blank,
+export var ArticleData = {
     "internships-shopee": shopee,
     "internships-dso": dso,
     "projects-electric_skateboard": electricSkateboard,
@@ -1403,4 +1397,12 @@ export const ArticleData = {
     "modules-EE4204": EE4204,
     "modules-EG2401A": EG2401A,
     "modules-CP3880": CP3880,
+}
+
+export const SerialiseArticleData = () => {
+    for (const [articleID, article] of Object.entries(ArticleData)) {
+        for (let i = 0; i < article["sections"].length; i++) {
+            ArticleData[articleID]["sections"][i]["key"] = articleID + i
+        }
+    }
 }

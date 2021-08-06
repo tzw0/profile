@@ -11,12 +11,14 @@ import Menu from "./components/menu/Menu"
 import { ifMobile } from "./utils/mobile";
 import { Article } from "./components/article/Article";
 import { ArticleData } from "./components/article/ArticleData";
+import { SeparationKey } from "./utils/constants";
 
 function App() {
   const fullPath = window.location.href
   const fullPathSplit = fullPath.split("/")
   const pathKey = fullPathSplit[fullPathSplit.length - 1]
-  var initialArticleID = ""
+  const defaultArticleID = "projects" + SeparationKey + "zheng_wen"
+  var initialArticleID = defaultArticleID
   var initialArticleOpen = false
   if (pathKey.length > 1 && pathKey.substring(1) in ArticleData) {
     initialArticleID = pathKey.substring(1)
@@ -28,12 +30,12 @@ function App() {
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [articleOpen, setArticleOpen] = useState(false)
-  const [articleID, setArticleID] = useState("")
+  const [articleID, setArticleID] = useState(defaultArticleID)
 
   const article = useRef(0);
 
   const closeArticle = () => {
-    setArticleID("");
+    setArticleID(defaultArticleID);
     window.history.pushState('', '', '/');
     article.current.scrollTo(0, 0)
     setArticleOpen(false);
@@ -41,9 +43,8 @@ function App() {
 
   const loadArticle = (id) => {
     if (id in ArticleData) {
-      setArticleID("");
-      window.history.pushState('', '', '#' + id);
       setArticleID(id);
+      window.history.pushState('', '', '#' + id);
       article.current.scrollTo(0, 0)
       setArticleOpen(true);
     }
