@@ -23,10 +23,7 @@ function App() {
   if (pathKey.length > 1 && pathKey.substring(1) in ArticleData) {
     initialArticleID = pathKey.substring(1)
     initialArticleOpen = true
-  } else {
-    window.history.pushState('', '', '/');
   }
-
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [articleOpen, setArticleOpen] = useState(false)
@@ -35,8 +32,8 @@ function App() {
   const article = useRef(0);
 
   const closeArticle = () => {
-    setArticleID(defaultArticleID);
     window.history.pushState('', '', '/');
+    setArticleID(defaultArticleID);
     article.current.scrollTo(0, 0)
     setArticleOpen(false);
   }
@@ -44,6 +41,7 @@ function App() {
   const loadArticle = (id) => {
     if (id in ArticleData) {
       setArticleID(id);
+      window.history.pushState('', '', '/');
       window.history.pushState('', '', '#' + id);
       article.current.scrollTo(0, 0)
       setArticleOpen(true);

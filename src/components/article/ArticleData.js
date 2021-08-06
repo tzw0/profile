@@ -398,7 +398,7 @@ const keysight =
     "subtext": "may 19",
     "sections": [
         {
-            "img": "https://i.ytimg.com/vi/er7VtyuUJXc/hqdefault.jpg",
+            "img": "assets/article/keysight/poster.jpg",
             "description": "The Keysight iot innovation challenge poster",
         },
         {
@@ -555,7 +555,7 @@ const IEEEHack =
     "subtext": "mar 20",
     "sections": [
         {
-            "img": "https://lh3.googleusercontent.com/proxy/GOUdIoZWUqIKMnh02kkqaYkjhaIWZUe_egfJHa2bFRBjufMb3b-4JvaNT34dfpXH7fSjquqvE7l-9TUWzak9DQweEbEHFZOStY1I-QVYdclauRWOA9YZ3u7dvIqRuy-dADUykU56",
+            "img": "assets/article/IEEE/presenting.jpg",
             "description": "Vernon and I showing our hardware display to the judges and fellow contestants",
         },
         {
@@ -817,7 +817,7 @@ const EE2026 =
             For labs, we program the basys 3 fpga board using verilog with Vivado to demonstrate logical concepts we have learnt. Teaching assistants will check for correct behaviour based on pressing inputs or outputs on the board and then grade us accordingly.`
         },
         {
-            "img": "https://www.researchgate.net/profile/Paris-Kitsos-2/publication/320094361/figure/fig2/AS:550281991516160@1508208858850/Basys3-FPGA-development-board.png",
+            "img": "assets/article/EE2026/basys3.png",
             "description": "BASYS 3 FPGA"
         },
         {
@@ -907,7 +907,7 @@ const CG2271 =
             I felt that the module could have been made more exciting. For example, the final project was programming a simulation of a car which was just a bunch of LEDs and a potentiometer wired up to the arduino. The lecturer in charge of this module for semester 2 let students built an actual bluetooth car for the final project.`
         },
         {
-            "img": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Logo_freeRTOS.png",
+            "img": "assets/article/CG2271/Logo_freeRTOS.png",
             "description": "freeRTOS logo"
         },
         {
@@ -1127,7 +1127,7 @@ const CG2028 =
             It also covers the pipeline and execution sequence in a single-cycle processor as well as memory cache.`
         },
         {
-            "img": "https://www.blackramelectronics.com/products/dev/DEV0001/img/DEV0001-ISO_600x600.png",
+            "img": "assets/article/CG2028/lpc1769.png",
             "description": "LPC1769 board"
         }
     ],
