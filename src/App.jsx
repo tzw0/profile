@@ -62,10 +62,10 @@ function App() {
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className={ifMobile("sections")}>
         <Intro />
-        <Skills />
         <Education load={loadArticle} />
         <Projects load={loadArticle} />
         <Internships load={loadArticle} />
+        <Skills />
         <Contact />
         {/* <About /> */}
       </div>

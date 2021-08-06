@@ -18,9 +18,14 @@
         margin-left: auto;
         margin-right: auto;
 
-        width: 70%;
+        width: 80%;
+        max-width: 900px;
 
         .invalid-email{
+            display: flex;
+            flex-direction: row;
+            margin-left: 19px;
+            
             .btn{
                 color: $tertiaryColor;
             }

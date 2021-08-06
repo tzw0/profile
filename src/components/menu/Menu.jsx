@@ -4,6 +4,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import EmailIcon from '@material-ui/icons/Email';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ListAltIcon from '@material-ui/icons/ListAlt';
+import AssessmentIcon from '@material-ui/icons/Assessment';
 import { ifMobile } from '../../utils/mobile';
 
 // import PersonIcon from '@material-ui/icons/Person';
@@ -23,6 +24,9 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                 </li>
                 <li key="Internships" onClick={() => setMenuOpen(false)}>
                     <a href='#internships'><BusinessCenterIcon fontSize="inherit" />&nbsp;Internships</a>
+                </li>
+                <li onClick={() => setMenuOpen(false)}>
+                    <a href='#skills'><AssessmentIcon fontSize="inherit" />&nbsp;Skills</a>
                 </li>
                 <li key="Contact" onClick={() => setMenuOpen(false)}>
                     <a href='#contact'><EmailIcon fontSize="inherit" />&nbsp;Contact</a>
