@@ -23,6 +23,7 @@ import { projectData, projectTags } from "./projectData";
 
 import window from "../../utils/window";
 import { ifMobile, isMobilePotrait, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
+import { SeparationKey } from "../../utils/constants";
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -71,7 +72,7 @@ function filter(tags_) {
 }
 
 
-const useMobileStyles = makeStyles((theme) => ({
+export const useAutocompleteMobileStyles = makeStyles((theme) => ({
     fontSize: "inherit",
 
     root: {
@@ -95,8 +96,11 @@ const useMobileStyles = makeStyles((theme) => ({
             borderColor: "#DF0252"
         }
     },
+    groupLabel: {
+        fontSize: "30px"
+    },
     paper: {
-        background: "#333",
+        background: "#111",
         color: "white",
         fontSize: "30px",
     },
@@ -129,7 +133,7 @@ const useMobileStyles = makeStyles((theme) => ({
     }
 }));
 
-const useStyles = makeStyles((theme) => ({
+export const useAutocompleteStyles = makeStyles((theme) => ({
     fontSize: "inherit",
 
     root: {
@@ -154,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     paper: {
-        background: "#333",
+        background: "#212",
         color: "white",
     },
     option: {
@@ -199,8 +203,8 @@ export default function Projects(props) {
         setProjectIndex(0);
     }, [tags])
 
-    const classes = useStyles();
-    const mobileClasses = useMobileStyles();
+    const classes = useAutocompleteStyles();
+    const mobileClasses = useAutocompleteMobileStyles();
 
     return (
         <div {...handlers} className={ifMobile("projects")} id="projects">
@@ -270,7 +274,7 @@ export default function Projects(props) {
 
                             </div>
 
-                            <ResponsiveButton color="primary" className="btn" title="Find out more" onClick={() => props.load("projects/" + projects[projectIndex].id)} />
+                            <ResponsiveButton color="primary" className="btn" title="Find out more" onClick={() => props.load("projects" + SeparationKey + projects[projectIndex].id)} />
                         </div>
                         : <div className="no-projects">
                             <h2 style={
@@ -321,7 +325,7 @@ export default function Projects(props) {
                                                 </p>
                                         }
 
-                                        <ResponsiveButton color="primary" className="btn" title="Find out more" onClick={() => props.load("projects/" + d.id)} />
+                                        <ResponsiveButton color="primary" className="btn" title="Find out more" onClick={() => props.load("projects" + SeparationKey + d.id)} />
                                     </div>
                                 </div>
                             </SwiperSlide>

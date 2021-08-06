@@ -1,14 +1,14 @@
 const electricSkateboard = {
-    "id": "electricSkateboard",
+    "id": "electric_skateboard",
     "img": "assets/projects/electricSkateboard.png",
     "tags": ["arduino", "hardware", "software", "team", "self-initiated"],
     "timeframe": "dec 18 - jan 19",
     "title": "ELECTRIC SKATEBOARD",
-    "description": "Armed with arduinos and a brushless DC motor, my team and I created a working bluetooth-controlled electric skateboard over the summer break.",
+    "description": "Armed with arduinos and a brushless DC motor, my team and I created a working bluetooth-controlled electric skateboard over the winter break.",
 }
 
 const bitsnbolts = {
-    "id": "bitsnbolts",
+    "id": "bits_n_bolts",
     "img": "assets/projects/bitsnbolts.png",
     "tags": ["esp32", "hardware", "software", "team", "web app", "hackathon", "self-initiated"],
     "timeframe": "may 19 - may 19",
@@ -62,7 +62,7 @@ const farmio = {
 }
 
 const electricTrolley = {
-    "id": "electricTrolley",
+    "id": "electric_trolley",
     "img": "assets/projects/electricTrolley.png",
     "tags": ["esp32", "hardware", "software", "pair", "self-initiated"],
     "timeframe": "may 19 - jun 19",
@@ -89,7 +89,7 @@ const brainhack = {
 }
 
 const IEEEHack = {
-    "id": "IEEEHack",
+    "id": "ieee_hack",
     "img": "assets/projects/IEEEHack.png",
     "tags": ["software", "team", "web app", "hackathon", "self-initiated"],
     "timeframe": "mar 20 - mar 20",
@@ -98,7 +98,7 @@ const IEEEHack = {
 }
 
 const furryFantasy = {
-    "id": "furryFantasy",
+    "id": "furry_fantasy",
     "img": "assets/projects/furryFantasy.png",
     "tags": ["software", "react", "web app", "postgres sql", "team", "CS2102"],
     "timeframe": "sep 20 - nov 20",
@@ -107,7 +107,7 @@ const furryFantasy = {
 }
 
 const zhengWen = {
-    "id": "zhengWen",
+    "id": "zheng_wen",
     "img": "assets/projects/zhengwen.png",
     "tags": ["software", "react", "web app", "solo", "self-initiated"],
     "timeframe": "jul 21 - aug 21",

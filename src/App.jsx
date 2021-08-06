@@ -6,40 +6,55 @@ import Projects from "./components/projects/Projects"
 import Contact from "./components/contact/Contact"
 import Skills from "./components/skills/Skills"
 import './app.scss'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Menu from "./components/menu/Menu"
 import { ifMobile } from "./utils/mobile";
-import SwipeUp from 'swipe-up'
-import Article from "./components/article/Article";
+import { Article } from "./components/article/Article";
 import { ArticleData } from "./components/article/ArticleData";
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [articleOpen, setArticleOpen] = useState(false)
-  const [articleID, setArticleID] = useState("internships/shopee")
-
-  const loadHandler = () => {
-    const swipeUp = new SwipeUp() //will init DOM and listeners,
-    swipeUp.enable()              //but SwipeUp will not be displayed until you enable it explicitly 
+  const path = window.location.pathname
+  var initialArticleID = ""
+  var initialArticleOpen = false
+  if (path.length > 1 && path.substring(1) in ArticleData) {
+    initialArticleID = path.substring(1)
+    initialArticleOpen = true
+  } else {
+    window.history.pushState('', '', '/');
   }
 
+
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [articleOpen, setArticleOpen] = useState(false)
+  const [articleID, setArticleID] = useState("")
+
+  const article = useRef(0);
+
   const closeArticle = () => {
+    setArticleID("");
+    window.history.pushState('', '', '/');
+    article.current.scrollTo(0, 0)
     setArticleOpen(false);
   }
 
   const loadArticle = (id) => {
-    setArticleID(id);
-    setArticleOpen(true);
+    if (id in ArticleData) {
+      setArticleID(id);
+      window.history.pushState('', '', '/' + id);
+      article.current.scrollTo(0, 0)
+      setArticleOpen(true);
+    }
   }
 
   useEffect(() => {
-    window.addEventListener('load', loadHandler)
-  }, []);
+    setArticleID(initialArticleID)
+    setArticleOpen(initialArticleOpen)
+  }, [initialArticleID, initialArticleOpen]);
 
   return (
     <div className="app">
       <div style={articleOpen ? { display: "flex" } : { display: "none" }}>
-        <Article data={ArticleData[articleID]} close={closeArticle} load={loadArticle} />
+        <Article data={ArticleData[articleID]} articleID={articleID} close={closeArticle} load={loadArticle} ref={article} />
       </div>
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

@@ -40,6 +40,7 @@
         overflow-y: hidden;
         background: #333;
         border-radius: 30px;
+        box-shadow: 0 3px 10px white;
     }
 
     .card {
@@ -79,7 +80,7 @@
                 .tag{
                     text-align: left;
                     display:inline-block;
-                    font-size: $contentSmallSize;
+                    font-size: $contentSize;
                     padding: 5px;
                     color: $mainColor;
                     margin: 3px;

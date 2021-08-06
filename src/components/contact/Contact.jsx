@@ -27,7 +27,6 @@ export default function Contact() {
         showResult(true);
     }
 
-
     return (
         <div className={ifMobile("contact")} id="contact">
             <div className="header">

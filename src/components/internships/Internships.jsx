@@ -1,5 +1,6 @@
 import "./internships.scss"
 import { ifMobile, ResponsiveButton, ResponsiveHeader } from "../../utils/mobile";
+import { SeparationKey } from "../../utils/constants";
 
 export default function Internships(props) {
     return (
@@ -17,7 +18,7 @@ export default function Internships(props) {
                                 <h3>Software Engineer<br /><span>Electronic Systems Division</span></h3>
                             </div>
                             <row>jun 20 - aug 20</row>
-                            <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships/dso")} />
+                            <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships" + SeparationKey + "dso")} />
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@ export default function Internships(props) {
                                 <h3>TechOps Engineer<br /><span>SPACE Team</span></h3>
                             </div>
                             <row>jan 21 - jul 21</row>
-                            <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships/shopee")} />
+                            <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships" + SeparationKey + "shopee")} />
                         </div>
                     </div>
                 </div>

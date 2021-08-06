@@ -18,6 +18,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import window from "../../utils/window"
 import { ifMobile } from "../../utils/mobile";
 import { useSwipeable } from "react-swipeable";
+import { SeparationKey } from "../../utils/constants";
 
 function paginate(page, data, maxItems) {
     var upperBound = data.length > page * maxItems ? page * maxItems : data.length;
@@ -109,7 +110,7 @@ export default function Modules({ selected, load }) {
             </div>
             <div className="container" style={{ gridTemplateColumns: "repeat(" + numHorizontalItems + ",1fr)" }}>
                 {items.map((d) => (
-                    <div className="item" onClick={() => load("modules/" + d.id)}>
+                    <div className="item" onClick={() => load("modules" + SeparationKey + d.id)}>
                         <img src={"assets/modules/" + d.id + ".jpg"} alt="" />
 
                         <h3>{d.title}</h3>
