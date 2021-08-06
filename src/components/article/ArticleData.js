@@ -1351,7 +1351,13 @@ const CP3880 =
     ],
 }
 
+const blank = {
+    "header": "",
+    "subtext": ""
+}
+
 export const ArticleData = {
+    "": blank,
     "internships-shopee": shopee,
     "internships-dso": dso,
     "projects-electric_skateboard": electricSkateboard,
