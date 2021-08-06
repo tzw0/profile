@@ -12,19 +12,16 @@ import { ifMobile } from "./utils/mobile";
 import { Article } from "./components/article/Article";
 import { ArticleData } from "./components/article/ArticleData";
 import { SeparationKey } from "./utils/constants";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
 
 function App() {
-  const path = window.location.pathname
+  const fullPath = window.location.href
+  const fullPathSplit = fullPath.split("/")
+  const pathKey = fullPathSplit[fullPathSplit.length - 1]
   const defaultArticleID = "projects" + SeparationKey + "zheng_wen"
   var initialArticleID = defaultArticleID
   var initialArticleOpen = false
-  if (path.length > 1 && path.substring(1) in ArticleData) {
-    initialArticleID = path.substring(1)
+  if (pathKey.length > 1 && pathKey.substring(1) in ArticleData) {
+    initialArticleID = pathKey.substring(1)
     initialArticleOpen = true
   } else {
     window.history.pushState('', '', '/');
@@ -47,7 +44,7 @@ function App() {
   const loadArticle = (id) => {
     if (id in ArticleData) {
       setArticleID(id);
-      window.history.pushState('', '', '/' + id);
+      window.history.pushState('', '', '#' + id);
       article.current.scrollTo(0, 0)
       setArticleOpen(true);
     }
@@ -60,26 +57,20 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
-        <Switch>
-          <Route path="/">
-            <div style={articleOpen ? { display: "flex" } : { display: "none" }}>
-              <Article data={ArticleData[articleID]} articleID={articleID} close={closeArticle} load={loadArticle} ref={article} />
-            </div>
-            <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <div className={ifMobile("sections")}>
-              <Intro />
-              <Skills />
-              <Education load={loadArticle} />
-              <Projects load={loadArticle} />
-              <Internships load={loadArticle} />
-              <Contact />
-              {/* <About /> */}
-            </div>
-          </Route>
-        </Switch>
-      </Router>
+      <div style={articleOpen ? { display: "flex" } : { display: "none" }}>
+        <Article data={ArticleData[articleID]} articleID={articleID} close={closeArticle} load={loadArticle} ref={article} />
+      </div>
+      <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div className={ifMobile("sections")}>
+        <Intro />
+        <Skills />
+        <Education load={loadArticle} />
+        <Projects load={loadArticle} />
+        <Internships load={loadArticle} />
+        <Contact />
+        {/* <About /> */}
+      </div>
     </div>
   );
 }
