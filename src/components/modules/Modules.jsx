@@ -110,7 +110,7 @@ export default function Modules({ selected, load }) {
             </div>
             <div className="container" style={{ gridTemplateColumns: "repeat(" + numHorizontalItems + ",1fr)" }}>
                 {items.map((d) => (
-                    <div className="item" onClick={() => load("modules" + SeparationKey + d.id)}>
+                    <div key={d.id} className="item" onClick={() => load("modules" + SeparationKey + d.id)}>
                         <img src={"assets/modules/" + d.id + ".jpg"} alt="" />
 
                         <h3>{d.title}</h3>

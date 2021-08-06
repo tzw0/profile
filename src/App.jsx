@@ -11,10 +11,12 @@ import Menu from "./components/menu/Menu"
 import { ifMobile } from "./utils/mobile";
 import { Article } from "./components/article/Article";
 import { ArticleData } from "./components/article/ArticleData";
+import { SeparationKey } from "./utils/constants";
 
 function App() {
   const path = window.location.pathname
-  var initialArticleID = ""
+  const defaultArticleID = "projects" + SeparationKey + "zheng_wen"
+  var initialArticleID = defaultArticleID
   var initialArticleOpen = false
   if (path.length > 1 && path.substring(1) in ArticleData) {
     initialArticleID = path.substring(1)
@@ -26,12 +28,12 @@ function App() {
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [articleOpen, setArticleOpen] = useState(false)
-  const [articleID, setArticleID] = useState("")
+  const [articleID, setArticleID] = useState(defaultArticleID)
 
   const article = useRef(0);
 
   const closeArticle = () => {
-    setArticleID("");
+    setArticleID(defaultArticleID);
     window.history.pushState('', '', '/');
     article.current.scrollTo(0, 0)
     setArticleOpen(false);

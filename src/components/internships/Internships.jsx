@@ -17,7 +17,7 @@ export default function Internships(props) {
                             <div className="contentBx">
                                 <h3>Software Engineer<br /><span>Electronic Systems Division</span></h3>
                             </div>
-                            <row>jun 20 - aug 20</row>
+                            <p>jun 20 - aug 20</p>
                             <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships" + SeparationKey + "dso")} />
                         </div>
                     </div>
@@ -30,7 +30,7 @@ export default function Internships(props) {
                             <div className="contentBx">
                                 <h3>TechOps Engineer<br /><span>SPACE Team</span></h3>
                             </div>
-                            <row>jan 21 - jul 21</row>
+                            <p>jan 21 - jul 21</p>
                             <ResponsiveButton color="primary" title="find out more" onClick={() => props.load("internships" + SeparationKey + "shopee")} />
                         </div>
                     </div>

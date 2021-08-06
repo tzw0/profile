@@ -45,14 +45,14 @@ export const Article = forwardRef((props, ref) => {
                     </div>
                     <span>{props.data.subtext}</span>
                     {props.data.sections.map((s) => (
-                        <div className="body">
+                        <div key={JSON.stringify(s)} className="body">
                             {s.hasOwnProperty("link") ? <a className="link" href={s.link} rel="noreferrer" target="_blank"><ResponsiveButton title={s.title} color="primary" /></a> : <div></div>}
                             {s.hasOwnProperty("article") ? <div className="link"> <ResponsiveButton title={s.title} color="secondary" onClick={() => props.load(s.article)} /> </div> : <div></div>}
                             {s.hasOwnProperty("paragraph") ?
                                 <div className="paragraph">
                                     {s.title ? <h2>{s.title}</h2> : <div></div>}
                                     <p>{s.paragraph.split("\n").map((i, key) => {
-                                        return <div key={key}><br />{i}</div>
+                                        return <span key={key}><br />{i}</span>
                                     })}</p>
                                 </div> : <div></div>}
                             {s.hasOwnProperty("img") ?

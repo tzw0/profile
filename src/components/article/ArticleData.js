@@ -1,11 +1,5 @@
 import { SeparationKey } from "../../utils/constants"
 
-const blank = {
-    "header": "",
-    "subtext": "",
-    "sections": []
-}
-
 const shopee =
 {
     "header": "Shopee",
@@ -1358,7 +1352,6 @@ const CP3880 =
 }
 
 export const ArticleData = {
-    "": blank,
     "internships-shopee": shopee,
     "internships-dso": dso,
     "projects-electric_skateboard": electricSkateboard,

@@ -52,7 +52,7 @@ class PanelCollection extends React.Component {
                     </div>
                     <div className={this.state.expanded ? "panels active" : "panels"}>
                         {this.props.panels.map((p) => (
-                            <Panel percent={this.state.expanded ? p.percent : 0} skill={p.skill} />
+                            <Panel key={p.skill} percent={this.state.expanded ? p.percent : 0} skill={p.skill} />
                         ))}
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export default function Skills() {
             </div>
             <div className="skill_stat">
                 {skillData.map((s) => (
-                    <PanelCollection title={s.title} panels={s.panels} icon={s.icon} expanded={expandAll} resetExpandedAll={resetExpandedAll} />
+                    <PanelCollection key={s.title} title={s.title} panels={s.panels} icon={s.icon} expanded={expandAll} resetExpandedAll={resetExpandedAll} />
                 ))}
             </div>
         </div >

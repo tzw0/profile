@@ -83,7 +83,7 @@ export default function Education(props) {
             >
 
                 {list.map((item) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={item.title}>
                         <EducationList
                             title={item.title}
                             active={selected === item.id}

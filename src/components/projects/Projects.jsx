@@ -73,8 +73,6 @@ function filter(tags_) {
 
 
 export const useAutocompleteMobileStyles = makeStyles((theme) => ({
-    fontSize: "inherit",
-
     root: {
         "& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
             transform: "translate(34px, 20px) scale(1);"
@@ -134,8 +132,6 @@ export const useAutocompleteMobileStyles = makeStyles((theme) => ({
 }));
 
 export const useAutocompleteStyles = makeStyles((theme) => ({
-    fontSize: "inherit",
-
     root: {
         "& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
             transform: "translate(34px, 20px) scale(1);"
@@ -229,6 +225,7 @@ export default function Projects(props) {
                     renderTags={(tagValue, getTagProps) =>
                         tagValue.map((option, index) => (
                             <Chip
+                                key={index}
                                 color="secondary"
                                 label={option}
                                 {...getTagProps({ index })}
@@ -253,7 +250,8 @@ export default function Projects(props) {
 
                                 <div className="tags">
                                     {projects[projectIndex].tags.map((t) => (
-                                        <div className="tag"
+                                        <div key={t}
+                                            className="tag"
                                             onClick={() => {
                                                 var tagsSet = new Set(tags)
                                                 if (tagsSet.has(t)) return;
@@ -269,7 +267,7 @@ export default function Projects(props) {
                                 <p>
                                     {projects[projectIndex].description}
                                     <br />
-                                    <div className="timeframe">{projects[projectIndex].timeframe}</div>
+                                    <span className="timeframe">{projects[projectIndex].timeframe}</span>
                                 </p>
 
                             </div>
@@ -296,14 +294,14 @@ export default function Projects(props) {
                         navigation={true}
                         className="mySwiper">
                         {projects.map((d) => (
-                            <SwiperSlide>
+                            <SwiperSlide key={d.title}>
                                 <div className="card">
                                     <div className="layer"></div>
                                     <div className="content">
                                         <h2>{d.title}</h2>
                                         <div className="tags">
                                             {d.tags.map((t) => (
-                                                <div className="tag"
+                                                <div key={t} className="tag"
                                                     onClick={() => {
                                                         var tagsSet = new Set(tags)
                                                         if (tagsSet.has(t)) return;
@@ -321,7 +319,7 @@ export default function Projects(props) {
                                                 <p>
                                                     {d.description}
                                                     <br />
-                                                    <div className="timeframe">{d.timeframe}</div>
+                                                    <span className="timeframe">{d.timeframe}</span>
                                                 </p>
                                         }
 
