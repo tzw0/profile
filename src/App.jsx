@@ -12,51 +12,97 @@ import { ifMobile } from "./utils/mobile";
 import { Article } from "./components/article/Article";
 import { ArticleData } from "./components/article/ArticleData";
 import { SeparationKey } from "./utils/constants";
+import { Helmet } from "react-helmet";
 
 function App() {
-  const fullPath = window.location.href
-  const fullPathSplit = fullPath.split("/")
-  const pathKey = fullPathSplit[fullPathSplit.length - 1]
-  const defaultArticleID = "projects" + SeparationKey + "zheng_wen"
-  var initialArticleID = defaultArticleID
-  var initialArticleOpen = false
-  if (pathKey.length > 1 && pathKey.substring(1) in ArticleData) {
-    initialArticleID = pathKey.substring(1)
-    initialArticleOpen = true
-  }
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [articleOpen, setArticleOpen] = useState(false)
-  const [articleID, setArticleID] = useState(defaultArticleID)
+  const [articleID, setArticleID] = useState("projects" + SeparationKey + "zheng_wen")
+  const [articleHistory, setArticleHistory] = useState([])
+  const [articlePointer, setArticlePointer] = useState(-1)
 
   const article = useRef(0);
 
   const closeArticle = () => {
     window.history.pushState('', '', '/');
-    setArticleID(defaultArticleID);
     article.current.scrollTo(0, 0)
     setArticleOpen(false);
+    setArticleHistory([]);
+    setArticlePointer(-1);
+  }
+
+  const getArticle = (id) => {
+    setArticleID(id);
+    window.history.pushState('', '', '/');
+    window.history.pushState('', '', '#' + id);
+    article.current.scrollTo(0, 0)
+    setArticleOpen(true);
   }
 
   const loadArticle = (id) => {
     if (id in ArticleData) {
-      setArticleID(id);
-      window.history.pushState('', '', '/');
-      window.history.pushState('', '', '#' + id);
-      article.current.scrollTo(0, 0)
-      setArticleOpen(true);
+      getArticle(id)
+
+      setArticleHistory(articleHistory.slice(0, articlePointer + 1).concat(id)) //clears any future articles and appends current loaded article
+      setArticlePointer(articlePointer + 1)
     }
   }
 
+  const previousArticle = () => {
+    if (articlePointer === 0) {
+      closeArticle()
+      return
+    }
+
+    getArticle(articleHistory[articlePointer - 1])
+    setArticlePointer(articlePointer - 1)
+  }
+
+  const nextArticle = () => {
+    if (articlePointer === articleHistory.length - 1) {
+      return
+    }
+
+    setArticlePointer(articlePointer + 1)
+    getArticle(articleHistory[articlePointer])
+  }
+
   useEffect(() => {
+    const fullPath = window.location.href
+    const fullPathSplit = fullPath.split("/")
+    const pathKey = fullPathSplit[fullPathSplit.length - 1]
+    const defaultArticleID = "projects" + SeparationKey + "zheng_wen"
+    var initialArticleID = defaultArticleID
+    var initialArticleOpen = false
+    var initialArticleHistory = []
+    var initialArticlePointer = -1
+    if (pathKey.length > 1 && pathKey.substring(1) in ArticleData) {
+      initialArticleID = pathKey.substring(1)
+      initialArticleOpen = true
+      initialArticleHistory = [initialArticleID]
+      initialArticlePointer = 0
+    }
     setArticleID(initialArticleID)
     setArticleOpen(initialArticleOpen)
-  }, [initialArticleID, initialArticleOpen]);
+    setArticleHistory(initialArticleHistory)
+    setArticlePointer(initialArticlePointer)
+  }, []);
 
   return (
     <div className="app">
+      <Helmet
+        meta={[
+          {
+            name: `theme-color`,
+            content: 'rgb(23, 17, 25)',
+            color: '#fff'
+          },
+        ]}>
+      </Helmet>
+
       <div style={articleOpen ? { display: "flex" } : { display: "none" }}>
-        <Article data={ArticleData[articleID]} articleID={articleID} close={closeArticle} load={loadArticle} ref={article} />
+        <Article data={ArticleData[articleID]} articleID={articleID} close={closeArticle} load={loadArticle} prev={previousArticle} next={nextArticle} ref={article} />
       </div>
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

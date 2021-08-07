@@ -8,8 +8,8 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import { ArticleData, SerialiseArticleData } from './ArticleData';
 import { useAutocompleteStyles, useAutocompleteMobileStyles } from '../projects/Projects';
 import { isMobilePotrait } from '../../utils/mobile';
-import { ReactComponent as Logo } from './logo.svg';
 import { SeparationKey } from '../../utils/constants';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 export const Article = forwardRef((props, ref) => {
     const classes = useAutocompleteStyles();
@@ -20,9 +20,9 @@ export const Article = forwardRef((props, ref) => {
         <div className={ifMobile("article")} ref={ref} >
             <div className="container" >
                 <div className="article-topbar">
-                    <a href="#intro" className="logo" onClick={() => props.close()}>
-                        <Logo className="logoIcon" />
-                    </a>
+                    <div className="back" onClick={() => props.prev()}>
+                        <ArrowBackIosIcon fontSize="inherit" />
+                    </div>
                     <div className="article-search">
                         <Autocomplete
                             classes={isMobilePotrait() ? mobileClasses : classes}

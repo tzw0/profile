@@ -13,6 +13,7 @@
     width: 100vw;
 
     .article-topbar{
+        overflow: hidden;
         z-index: 2100;
         width: 95%;
         position: fixed;
@@ -30,17 +31,14 @@
             max-width: 600px;
         }
 
-        .logo{
+        .back{
             color: $mainColor;
             width: 50px;
-
-            .logoIcon{
-                display: none;
-                width: 46px;
-                height: 46px;
-            }
+            font-size: 40px;
+            margin-top: 5px;
 
             &:hover{
+                cursor: pointer;
                 color: $secondarySelect;
             }
         }
@@ -65,24 +63,21 @@
         .article-topbar{
             height: 130px;
 
-            .logo{
-                width: 100px;
-
-                .logoIcon{
-                    width: 80px;
-                    height: auto;
-                }
+            .back{
+                margin-top: 15px;
+                font-size: 90px;
             }
-
             
             .article-search{
                 font-size: $mobileContentSize;
             }
-        }
-        .container{
+
+            
             .close{
                 font-size: 100px;
             }
+        }
+        .container{
             .content{
                 margin-top: 70px;
     
