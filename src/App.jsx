@@ -115,7 +115,7 @@ function App() {
           <Skills />
           <Contact />
         </div>
-        {/* <About /> */}
+        <div className="no-height" ></div>
       </div>
     </div>
   );
