@@ -286,7 +286,7 @@ const dso =
             - Simulated behaviour of entities with Discrete Event Simulation (O2DESNet)
             - Visualised the simulation on a 3D mapping library (CesiumJs)
             
-            This internship was very interesting as I got to play around with simulations and 3D graphics, almost like creating a game. Unfortunately, more details of this internship is confidential.`
+            This internship was very interesting as I got to play around with simulations and 3D graphics. Unfortunately, more details of this internship is confidential.`
         }
     ],
 }
@@ -352,7 +352,7 @@ const musicviz =
         {
             "title": "Description",
             "paragraph": `This was a solo project. I wanted to make a nice led music visualiser and thought it would look awesome by lighting acrylic tubes with neopixels. I completed the project over the chinese new year break.
-            This was made using an arduino nano hooked up to an opamp (knowledge from CG1111) and then connected to a microphone. The arduino nano will then output using pulse width modulation to the neopixels on board which will affect the rgb colour produced. The colours produced determine on the amplitude and frequency of sounds picked up by the microphone. The housing of the electronics is made up of a mixture of laser-cut acrylic and wood. The device is powered externally by USB.`
+            This was made using an arduino nano hooked up to an operational amplifier (knowledge from CG1111) and then connected to a microphone. The arduino nano will send signals to the neopixels using pulse width modulation on board to change the rgb values. The colours produced are determined based on the amplitude and frequency of the sound waves picked up by the microphone. The casing was made up of a mixture of laser-cut acrylic and wood. The device is powered externally by USB.`
         }
     ],
 }
@@ -490,7 +490,8 @@ const electricTrolley =
     "sections": [
         {
             "title": "Description",
-            "paragraph": "Jing Xuan wanted to make an electric trolley and she asked me if I was interested. I was in. This project proved to have many mechanical challenges such as securing the motor mounts tightly in place. Also, the two swivel wheels in front coupled with the uneven torque of each motor made it incredibly hard to steer. Needless to say, we had fun making it."
+            "paragraph": `Jing Xuan recruited me for this project. We had many mechanical challenges such as securing the motor mounts tightly in place. Also, the two swivel wheels in front coupled with the uneven torque of each motor made it incredibly hard to steer. 
+            Instead of using an arduino connected to a bluetooth module like for my electric skateboard, we used an esp32 and controlled the two motors using a webpage hosted by the microcontroller.`
         },
         {
             "img": "assets/article/electricTrolley/trolley_setup.jpg",
@@ -536,7 +537,7 @@ const brainhack =
     "sections": [
         {
             "title": "Description",
-            "paragraph": "My Team (Jin Wen, Kang Ming, Tamelly, Guan Yew, Me) created a karaoke app using flutter with video calling capabilities to address the lack of personal interaction during the covid19 circuit breaker. The app included functionality such as the ability to add karoke videos into a queue using youtube links as well as real time playing and pausing of the current video by any user in the virtual room. Watch our demo video below!"
+            "paragraph": "My Team (Jin Wen, Kang Ming, Tamelly, Guan Yew) created a karaoke app using flutter with video calling capabilities to address the lack of personal interaction during the covid19 circuit breaker. The app included functionality such as the ability to add karoke videos into a queue using youtube links as well as real time playing and pausing of the current video by any user in the virtual room. Watch our demo video below!"
         },
         {
             "youtube": "mwTgA_9oudI",
