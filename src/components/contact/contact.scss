@@ -109,7 +109,9 @@
                 }
 
                 textarea{
-                    height: 300px;
+                    height: calc(100vh - 900px);
+                    min-height: 50px;
+                    max-height: 500px;
                     margin: 30px 0;
                 }
             }

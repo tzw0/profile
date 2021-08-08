@@ -188,7 +188,7 @@ export const useAutocompleteStyles = makeStyles((theme) => ({
 }));
 
 export default function Projects(props) {
-    const { height } = window();
+    const { height, width } = window();
     const fixedOptions = [];
     const [tags, setTags] = useState([...fixedOptions]);
     const [projects, setProjects] = useState([]);
@@ -266,16 +266,22 @@ export default function Projects(props) {
                                             }}>{t}</div>
                                     ))}
                                 </div>
+                                {
+                                    height * 1.0 / width > 1.3 ?
+                                        <div className="projectCover">
+                                            <img src={projects[projectIndex].img} alt=""></img>
+                                        </div> : <div></div>
+                                }
 
-                                <div className="projectCover">
-                                    <img src={projects[projectIndex].img} alt=""></img>
-                                </div>
+                                {
+                                    height * 1.0 / width > 1.45 ?
+                                        <p>
+                                            {projects[projectIndex].description}
+                                            <br />
+                                            <span className="timeframe">{projects[projectIndex].timeframe}</span>
+                                        </p> : <p></p>
+                                }
 
-                                <p>
-                                    {projects[projectIndex].description}
-                                    <br />
-                                    <span className="timeframe">{projects[projectIndex].timeframe}</span>
-                                </p>
 
                             </div>
 
@@ -316,12 +322,16 @@ export default function Projects(props) {
                                                     }}>{t}</div>
                                             ))}
                                         </div>
+                                        {/* {
+                                            height < 800 ?
+                                                <div></div> : */}
                                         <div className="projectCover">
                                             <img src={d.img} alt=""></img>
                                         </div>
+                                        {/* } */}
 
                                         {
-                                            height - 350 < 600 ?
+                                            height < 950 ?
                                                 <p></p> :
                                                 <p>
                                                     {d.description}

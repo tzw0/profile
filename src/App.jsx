@@ -111,8 +111,10 @@ function App() {
         <Education load={loadArticle} />
         <Projects load={loadArticle} />
         <Internships load={loadArticle} />
-        <Skills />
-        <Contact />
+        <div className="no-scroll-snap">
+          <Skills />
+          <Contact />
+        </div>
         {/* <About /> */}
       </div>
     </div>

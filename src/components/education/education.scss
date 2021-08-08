@@ -4,8 +4,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    z-index: 10;
 
     .header{
+        z-index: inherit;
         align-self: center;
         text-align: center;
         overflow: hidden;
@@ -43,8 +46,6 @@
             }
         }
     }
-
-    
 
     ul{
         margin: 10px;

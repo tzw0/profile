@@ -31,7 +31,6 @@ export default function Modules({ selected, load }) {
     const [page, setPage] = useState(1);
     const [items, setItems] = useState([]);
     const [maxPages, setMaxPages] = useState(1);
-    const [paginationStyle, setPaginationStyle] = useState({});
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -96,13 +95,12 @@ export default function Modules({ selected, load }) {
         }
 
         setMaxPages(Math.ceil(data.length / maxItemsPerPage));
-        setPaginationStyle({ width: (maxPages > 7 ? 7 : maxPages) * (isMobile ? 56 : 51) + (isMobile ? 110 : 101) + "px" });
         setPage(1);
     }, [selected, data, maxPages, maxItemsPerPage])
 
     return (
         <div {...handlers} className={ifMobile("modules")}>
-            <div className="pagination" style={paginationStyle}>
+            <div className="pagination">
                 <Pagination count={maxPages} color="primary"
                     page={page}
                     onChange={handleChange}

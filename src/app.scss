@@ -32,6 +32,14 @@
             border-bottom: 15px solid rgba(0, 0, 0, 0.11);
             scroll-snap-align: start;
         }
+
+        .no-scroll-snap {
+            > * {
+                width: 100vw;
+                min-height: calc(100vh - 70px);
+            }
+
+        }
     }
 }
 

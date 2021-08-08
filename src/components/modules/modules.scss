@@ -19,15 +19,11 @@
         }
 
         .pagination{
-            margin: 0 auto;
-            display:inline-block;
-            overflow: hidden;
     
             ul{
                 & .MuiPaginationItem-root {
                     font-size: 40px;
                     overflow: visible;
-                    height: auto;
                 }
             }
         }
@@ -105,11 +101,17 @@
     }
 
     .pagination{
-        margin: 0 auto;
-        display:inline-block;
-        overflow: hidden;
+        margin: 0;
+        display:flex;
+        justify-content: center;
+        width: 100%;
+
+        // .MuiPagination-root {
+        // }
 
         ul{
+            margin: 0;
+            width: 100%;
             & .MuiPaginationItem-root {
                 color: white;
             }
