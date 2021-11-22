@@ -602,6 +602,135 @@ const zhengWen =
     ],
 }
 
+const shoppeth =
+{
+    "header": "Shoppeth",
+    "subtext": "aug 21 - sep 21",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "Shoppeth is an online decentralized marketplace that allows anyone to buy and sell using ethereum. It features group buy functionality as well as a customisable production and delivery pipeline. The frontend interface is created with react while the backend utilises a smart contract coded in solidity."
+        },
+        {
+            "img": "assets/article/shoppeth/logo.png",
+            "description": "Shoppeth Logo"
+        },
+        {
+            "link": "https://tzw0.github.io/shoppeth",
+            "title": "Try out Shoppeth now!",
+        },
+        {
+            "img": "assets/article/shoppeth/shoppeth_homepage.jpg",
+            "description": "Screen shot of the homepage of Shoppeth"
+        },
+        {
+            "link": "https://docs.google.com/presentation/d/1Yfd8J_tbQFdnPJpywu3LivXoB_befGLSOGinYYjBQlA/edit?usp=sharing",
+            "title": "Shoppeth Presentation Slides",
+        },
+        {
+            "img": "assets/article/shoppeth/userguide.jpg",
+            "description": "Shoppeth User Guide"
+        },
+        {
+            "link": "https://docs.google.com/document/d/1NlmtqqD2pwdNaPdntRNkPUvk_TCnot_GpgkqmAoKSqg/edit?usp=sharing",
+            "title": "Shoppeth Report",
+        },
+    ],
+}
+
+const siotar =
+{
+    "header": "Siotar",
+    "subtext": "oct 21 - oct 21",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "This article describes an interaction design for a smart living management system with Augmented Reality. The product name, SIOTAR, is an acronym for Secure Internet Of Things with Augmented Reality. Wireframing was creating with balsamiq while the interactive prototype is implemented using Figma."
+        },
+        {
+            "img": "assets/article/siotar/logo.png",
+            "description": "Siotar's Logo"
+        },
+        {
+            "link": "https://docs.google.com/document/d/1hoL0WTSR10N08cE5uqJ7wmKFvMBCk8ZT4mRz2XinUVc/edit#",
+            "title": "Siotar Report",
+        },
+        {
+            "iframe": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FT5Q7p7ULV7KZc77biQzgur%2FIndividual-Design-Project%3Fnode-id%3D92%253A2101%26scaling%3Dmin-zoom%26page-id%3D90%253A369%26starting-point-node-id%3D92%253A2101",
+            "description": "Expand Full Screen by clicking on the interactive prototype and hitting 'F', then click 'R' to reset hotspot positions"
+        },
+        {
+            "link": "https://www.figma.com/proto/T5Q7p7ULV7KZc77biQzgur/Individual-Design-Project?node-id=92%3A2101&scaling=min-zoom&page-id=90%3A369&starting-point-node-id=92%3A2101",
+            "title": "Siotar Interactive Prototype",
+        },
+    ]
+}
+
+const recontre =
+{
+    "header": "Recontre",
+    "subtext": "sep 21 - nov 21",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "Recontre is a mobile application that helps you to browse, discover and decide on outing ideas. All additional information on user research, design choices, reports and the interactive prototype can be found in the website linked below. The website is created with react."
+        },
+        {
+            "link": "https:tzw0.github.io/recontre",
+            "title": "Recontre Design Portfolio Website",
+        },
+    ]
+}
+
+const boingboing =
+{
+    "header": "Boing Boing",
+    "subtext": "aug 21 - nov 21",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "Boing Boing is our Computer Engineering Capstone Project. The goal is to make a system that detects, predicts and displays known dance moves and related data analytics."
+        },
+        {
+            "title": "Role",
+            "paragraph": "There are a total of 6 roles;Sensors, Internal Communication, Machine Learning, FPGA, External Communication, Dashboard. I did the dashboard component. For more information on the roles and project as a whole, please view our final design report in the link below."
+        },
+        {
+            "link": "https://docs.google.com/document/d/1WDu1CO-LPDHhha7hVZgPYrofLpLBx1bM/edit?usp=sharing&ouid=100729052484979234219&rtpof=true&sd=true",
+            "title": "Final Design Report"
+        },
+        {
+            "paragraph": ""
+        },
+        {
+            "title": "My Responsibilites",
+            "paragraph": "I was in charge of creating a full stack web application which received input sensor streams via TCP from the external communications server located in NUS School of Computing. I had to store relevant sensor data, create a real time monitoring system as well as an offline analytics dashboard to view past sensor data."
+        },
+        {
+            "paragraph": ""
+        },
+        {
+            "title": "Dashboard System Full Walkthrough",
+            "paragraph": "Live View begins at 5:00, Evaluator & Preliminary Analytics begin at 6:17, Offline Analytics begin at 9:00.",
+        },
+        {
+            "youtube": "LI86cLZ6Yqg",
+            "description": "Dashboard System Walk Through and Design Justifications"
+        },
+        {
+            "paragraph": "I have made a few changes between the version above and the final design below. The section detailing the changes and justifications is bookmarked by the link below.",
+        },
+        {
+            "link": "https://docs.google.com/document/d/1WDu1CO-LPDHhha7hVZgPYrofLpLBx1bM/edit#heading=h.3q9ydoy53uuy",
+            "title": "Changes in Final Design"
+        },
+        {
+            "youtube": "HxkJSXwvEwU",
+            "description": "Final Evaluation for Dashboard With three dancers"
+        }
+    ]
+}
+
 const CG1111 =
 {
     "header": "CG1111",
@@ -1352,6 +1481,74 @@ const CP3880 =
     ],
 }
 
+const CG4002 =
+{
+    "header": "CG4002",
+    "subtext": "Computer Engineering Capstone Project",
+    "sections": [
+        {
+            "img": "assets/modules/CG4002.jpg",
+            "description": "taken 21/22 sem 1, MCs: 8",
+        },
+        {
+            "link": "https://nusmods.com/modules/CG4002/computer-engineering-capstone-project",
+            "title": "more details @nusmods",
+        },
+
+    ],
+}
+
+const EE4032 =
+{
+    "header": "EE4032",
+    "subtext": "Blockchain Engineering",
+    "sections": [
+        {
+            "img": "assets/modules/EE4032.jpg",
+            "description": "taken 21/22 sem 1, MCs: 4",
+        },
+        {
+            "link": "https://nusmods.com/modules/EE4032/blockchain-engineering",
+            "title": "more details @nusmods",
+        },
+
+    ],
+}
+
+const CS4225 =
+{
+    "header": "CG4002",
+    "subtext": "Big Data Systems for Data Science",
+    "sections": [
+        {
+            "img": "assets/modules/CS4225.jpg",
+            "description": "taken 21/22 sem 1, MCs: 8",
+        },
+        {
+            "link": "https://nusmods.com/modules/CS4225/big-data-systems-for-data-science",
+            "title": "more details @nusmods",
+        },
+
+    ],
+}
+
+const CS3240 =
+{
+    "header": "CS3240",
+    "subtext": "Interaction Design",
+    "sections": [
+        {
+            "img": "assets/modules/CS3240.jpg",
+            "description": "taken 21/22 sem 1, MCs: 4",
+        },
+        {
+            "link": "https://nusmods.com/modules/CS3240/interaction-design",
+            "title": "more details @nusmods",
+        },
+
+    ],
+}
+
 export var ArticleData = {
     "internships-shopee": shopee,
     "internships-dso": dso,
@@ -1368,6 +1565,10 @@ export var ArticleData = {
     "projects-ieee_hack": IEEEHack,
     "projects-furry_fantasy": furryFantasy,
     "projects-zheng_wen": zhengWen,
+    "projects-shoppeth": shoppeth,
+    "projects-siotar": siotar,
+    "projects-recontre": recontre,
+    "projects-boingboing": boingboing,
     "modules-CG1111": CG1111,
     "modules-CS1010": CS1010,
     "modules-CS1231": CS1231,
@@ -1398,6 +1599,10 @@ export var ArticleData = {
     "modules-EE4204": EE4204,
     "modules-EG2401A": EG2401A,
     "modules-CP3880": CP3880,
+    "modules-CG4002": CG4002,
+    "modules-CS3240": CS3240,
+    "modules-EE4032": EE4032,
+    "modules-CS4225": CS4225,
 }
 
 export const SerialiseArticleData = () => {

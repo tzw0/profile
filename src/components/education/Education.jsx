@@ -50,10 +50,10 @@ export default function Education(props) {
             id: "y3s2",
             title: "Year3-Sem2",
         },
-        // {
-        //     id: "y4s1",
-        //     title: "Year4-Sem1",
-        // },
+        {
+            id: "y4s1",
+            title: "Year4-Sem1",
+        },
         // {
         //     id: "y4s2",
         //     title: "Year4-Sem2",

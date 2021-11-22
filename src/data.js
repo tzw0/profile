@@ -148,6 +148,26 @@ const CP3880 = {
     title: "Advanced Technology Attachment Programme"
 }
 
+const CG4002 = {
+    id: "CG4002",
+    title: "Computer Engineering Capstone Project"
+}
+
+const CS3240 = {
+    id: "CS3240",
+    title: "Interaction Design"
+}
+
+const CS4225 = {
+    id: "CS4225",
+    title: "Big Data Systems for Data Science"
+}
+
+const EE4032 = {
+    id: "EE4032",
+    title: "Blockchain Engineering"
+}
+
 export const y1s1 = [
     CG1111,
     CS1010,
@@ -197,6 +217,10 @@ export const y3s2 = [
 ]
 
 export const y4s1 = [
+    CG4002,
+    EE4032,
+    CS3240,
+    CS4225
 ]
 
 export const y4s2 = [
@@ -224,6 +248,10 @@ export const software = [
     CS3210,
     EE4204,
     EE4211,
+    CG4002,
+    EE4032,
+    CS3240,
+    CS4225
 ]
 
 export const allMods = [
@@ -257,4 +285,8 @@ export const allMods = [
     EE4204,
     EG2401A,
     CP3880,
+    CG4002,
+    EE4032,
+    CS3240,
+    CS4225
 ]

@@ -82,6 +82,22 @@ export const Article = forwardRef((props, ref) => {
                                     <br />
                                 </div>
                                 : <div></div>}
+                            {s.hasOwnProperty("iframe") ?
+                                <div className="video">
+                                    <br />
+                                    <div className="video-responsive">
+                                        <iframe
+                                            src={s.iframe}
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            title={s.description}
+                                        />
+                                    </div>
+                                    <span>{s.description}</span>
+                                    <br />
+                                </div>
+                                : <div></div>}
                         </div>
                     ))}
                 </div>

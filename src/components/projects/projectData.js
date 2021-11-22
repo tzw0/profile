@@ -115,6 +115,42 @@ const zhengWen = {
     "description": "This webapp which serves as my resume as well as a catalogue for the modules and projects I have taken.",
 }
 
+const Shoppeth = {
+    "id": "shoppeth",
+    "img": "assets/projects/shoppeth.png",
+    "tags": ["software", "react", "web app", "team", "EE4032", "solidity"],
+    "timeframe": "aug 21 - sep 21",
+    "title": "Shoppeth",
+    "description": "Shoppeth is an online decentralized marketplace that allows anyone to buy and sell using ethereum.",
+}
+
+const SIOTAR = {
+    "id": "siotar",
+    "img": "assets/projects/siotar.png",
+    "tags": ["ui/ux", "figma", "solo", "interactive prototype", "CS3240"],
+    "timeframe": "oct 21 - oct 21",
+    "title": "SIOTAR",
+    "description": "An interaction design on a smart living management system with Augmented Reality.",
+}
+
+const Recontre = {
+    "id": "recontre",
+    "img": "assets/projects/recontre.png",
+    "tags": ["ui/ux", "figma", "team", "interactive prototype", "CS3240"],
+    "timeframe": "sep 21 - nov 21",
+    "title": "Recontre",
+    "description": "An interaction design of a mobile application that helps you to browse, discover and decide on outing ideas.",
+}
+
+const Boingboing = {
+    "id": "boingboing",
+    "img": "assets/projects/boingboing.png",
+    "tags": ["software", "react", "web app", "team", "CG4002", "golang", "fullstack"],
+    "timeframe": "aug 21 - nov 21",
+    "title": "Boing Boing",
+    "description": "Dashboard of a dancing assistant that detects dance moves and displays information on timing, position and muscle fatigue.",
+}
+
 export const projectData = [
     electricSkateboard,
     musicviz,
@@ -128,7 +164,11 @@ export const projectData = [
     IEEEHack,
     brainhack,
     furryFantasy,
-    zhengWen
+    zhengWen,
+    Shoppeth,
+    SIOTAR,
+    Recontre,
+    Boingboing
 ]
 
 const getProjectTags = () => {
