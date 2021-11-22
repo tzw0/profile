@@ -676,7 +676,7 @@ const recontre =
             "paragraph": "Recontre is a mobile application that helps you to browse, discover and decide on outing ideas. All additional information on user research, design choices, reports and the interactive prototype can be found in the website linked below. The website is created with react."
         },
         {
-            "link": "https:tzw0.github.io/recontre",
+            "link": "https://tzw0.github.io/recontre",
             "title": "Recontre Design Portfolio Website",
         },
     ]
