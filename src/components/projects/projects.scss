@@ -2,17 +2,17 @@
 
 .projects {
 
-    .header{
+    .header {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        h1{
+        h1 {
             z-index: 30;
         }
     }
 
-    .controls{
+    .controls {
         display: flex;
         z-index: 40;
         flex-direction: column;
@@ -26,7 +26,7 @@
     .swiper-pagination-bullet {
         background-color: white;
     }
-    
+
 
     .swiper-slide {
         background-position: center;
@@ -48,38 +48,37 @@
         width: auto;
         height: 100%;
         margin: 0 auto;
-        background: #333 ;
+        background: #333;
         padding: 20px 20px;
         text-align: center;
         overflow: hidden;
 
-        .layer{
+        .layer {
             position: absolute;
             top: calc(100% - 5px);
             left: 0;
-            width: 100%;
             height: 100%;
             background: linear-gradient($primarySelect, $secondarySelect);
             z-index: 1;
             transition: 0.5s;
         }
 
-        .content{
+        .content {
             position: relative;
             z-index: 2;
-            
-            h2{
+
+            h2 {
                 justify-content: center;
                 display: flex;
                 font-weight: 300;
             }
-            
-            .tags{
+
+            .tags {
                 margin: 10px 0;
 
-                .tag{
+                .tag {
                     text-align: left;
-                    display:inline-block;
+                    display: inline-block;
                     font-size: $contentSize;
                     padding: 5px;
                     color: $mainColor;
@@ -89,30 +88,30 @@
                     background-color: $secondarySelect;
                 }
             }
-            
 
-            p{
+
+            p {
                 font-size: $contentSize;
                 line-height: $contentXLargeSize;
                 font-family: inherit;
                 margin-bottom: 10px;
             }
 
-            .projectCover{
+            .projectCover {
                 border-radius: 30px;
                 height: 30%;
                 margin: 0 auto;
                 overflow: hidden;
-                object-fit:contain;
+                object-fit: contain;
 
-                img{
+                img {
                     width: 85%;
                     height: auto;
                     transition: 0.5s;
                 }
             }
 
-            .timeframe{
+            .timeframe {
                 font-weight: 300;
                 color: $tertiaryColor;
                 font-size: $contentSize;
@@ -126,16 +125,16 @@
         // }
     }
 
-        
+
     .card:hover {
 
-        .layer{
-            top:0;
+        .layer {
+            top: 0;
         }
 
-        .content{
-            .projectCover{
-                img{
+        .content {
+            .projectCover {
+                img {
                     filter: grayscale(100%);
                 }
             }
@@ -148,36 +147,36 @@
         -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0009);
         overflow-y: hidden;
     }
-    
+
     .swiper-wrapper {
         overflow: visible;
         list-style: none;
     }
 
-    .no-projects{
+    .no-projects {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 100px;
 
-        h2{
+        h2 {
             font-size: $ProjectCardHeader;
             font-weight: 300;
             display: flex;
         }
     }
 
-    &.mobile{
+    &.mobile {
 
         .controls {
             margin-bottom: 10px;
             font-size: $mobileContentSize;
         }
 
-        .mobile-project-container{
+        .mobile-project-container {
             position: relative;
 
-            h2{
+            h2 {
                 font-size: $mobileContentLargeSize;
                 text-align: center;
                 padding: 20px;
@@ -185,9 +184,9 @@
         }
 
         .card:hover {
-            .content{
-                .projectCover{
-                    img{
+            .content {
+                .projectCover {
+                    img {
                         filter: none;
                     }
                 }
@@ -199,33 +198,33 @@
             background: none;
             margin: 0 10%;
 
-            .swipe-instructions{
+            .swipe-instructions {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 margin-bottom: 20px;
 
-                h3{
+                h3 {
                     font-size: $mobileContentLargeSize;
                     font-weight: 300;
                     color: $tertiaryColor;
                 }
             }
 
-            .tags{
+            .tags {
 
-                .tag{
+                .tag {
                     font-size: $mobileContentSize;
                     border-radius: 15px;
                 }
             }
-            
-            .content{
-                h2{
+
+            .content {
+                h2 {
                     font-size: $mobileContentXLargeSize;
                 }
-                
-                p{
+
+                p {
                     font-size: $mobileContentSize;
                     line-height: $mobileContentLargeSize;
                     overflow-y: hidden;
@@ -233,10 +232,10 @@
                     margin-bottom: 30px;
                 }
 
-                .timeframe{
+                .timeframe {
                     font-size: $mobileContentSize;
                 }
-                
+
             }
 
         }
