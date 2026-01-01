@@ -1,7 +1,7 @@
 const electricSkateboard = {
     "id": "electric_skateboard",
     "img": "assets/projects/electricSkateboard.png",
-    "tags": ["arduino", "hardware", "software", "team", "self-initiated"],
+    "tags": ["arduino", "hardware", "software", "team", "-selfinitiated"],
     "timeframe": "dec 18 - jan 19",
     "title": "ELECTRIC SKATEBOARD",
     "description": "Armed with arduinos and a brushless DC motor, my team and I created a working bluetooth-controlled electric skateboard over the winter break.",
@@ -151,6 +151,42 @@ const Boingboing = {
     "description": "Dashboard of a dancing assistant that detects dance moves and displays information on timing, position and muscle fatigue.",
 }
 
+const ZombieVR = {
+    "id": "zombie-vr",
+    "img": "assets/projects/zombie-vr.png",
+    "tags": ["software", "team", "CS4240", "unity", "VR", "Game", "CS4240"],
+    "timeframe": "jan 22 - feb 22",
+    "title": "Zombie VR",
+    "description": "Created a VR game with a team of 6 of a traditional FPS zombie game",
+}
+
+const JuiceIt = {
+    "id": "juice-it",
+    "img": "assets/projects/juice-it.png",
+    "tags": ["software", "team", "CS4240", "unity", "VR", "Game", "CS4240"],
+    "timeframe": "feb 22 - mar 22",
+    "title": "JuiceIt",
+    "description": "Created a VR game with a team of 6 of a fruit ninja game",
+}
+
+const InventoryApp = {
+    "id": "inventory-app",
+    "img": "assets/projects/inventory-app.png",
+    "tags": ["software", "solo", "golang", "fullstack", "webapp", "boltdb"],
+    "timeframe": "aug 24",
+    "title": "Inventory App",
+    "description": "A simple inventory application for auditting and labelling of warehouse stock with QR codes",
+}
+
+const GDriveScroller = {
+    "id": "gdrive-scroller",
+    "img": "assets/projects/gdrive-scroller.png",
+    "tags": ["software", "solo", "wedding", "google-drive-api"],
+    "timeframe": "apr 25",
+    "title": "G-Drive Scroller",
+    "description": "A simple stylised live photo scroller for events; It accomodates live photo uploads, organisations and refreshes ordering every cycle",
+}
+
 export const projectData = [
     electricSkateboard,
     musicviz,
@@ -168,7 +204,11 @@ export const projectData = [
     Shoppeth,
     SIOTAR,
     Recontre,
-    Boingboing
+    Boingboing,
+    ZombieVR,
+    JuiceIt,
+    InventoryApp,
+    GDriveScroller
 ]
 
 const getProjectTags = () => {

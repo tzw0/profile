@@ -442,6 +442,10 @@ const brainxpace =
             "paragraph": "Brainxpace is an educational webapp that allows everyone to share lessons, quizes, screen-cast, learning materials and much more. Check out our video below for more information!"
         },
         {
+            "title": "Github Repo",
+            "link": "https://github.com/GlenWong97/Django_Master"
+        },
+        {
             "youtube": "viX5OPovXiQ",
             "description": "Our Demo Video for brainxpace"
         },
@@ -544,6 +548,10 @@ const brainhack =
             "description": "WeOke demo video (forgive our singing)"
         },
         {
+            "title": "Github Repo",
+            "link": "https://github.com/jinwentay/brainhack-karaoke"
+        },
+        {
             "img": "assets/article/brainhack/finalist.png",
             "description": "Brainhack 2020 finalist certificate",
         },
@@ -562,6 +570,10 @@ const IEEEHack =
         {
             "title": "Description",
             "paragraph": "We prototyped a sentiment analysis tool in response to covid 19 that aims to improve morale in the nation. More details can be found in the video below."
+        },
+        {
+            "title": "Github Repo",
+            "link": "https://github.com/aquohn/happy-covid-whispers"
         },
         {
             "youtube": "WPaT4W_8ans",
@@ -727,9 +739,120 @@ const boingboing =
         {
             "youtube": "HxkJSXwvEwU",
             "description": "Final Evaluation for Dashboard With three dancers"
+        },
+        {
+            "title": "Dashboard Client Repo",
+            "link": "https://github.com/CG4002-AY2122S1-B02/dashboard-client"
+        },
+        {
+            "title": "Dashboard Server Repo",
+            "link": "https://github.com/CG4002-AY2122S1-B02/dashboard-server"
         }
     ]
 }
+
+
+const zombieVR =
+{
+    "header": "Zombie VR",
+    "subtext": "aug 21 - nov 21",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "For the assignment 3 for NUS CS4240 2022, our team decided to create a simple traditional FPS zombie VR game"
+        },
+        {
+            "title": "How to Play?",
+            "paragraph": `Press the right trigger button to shoot
+Press the left trigger button to teleport to the highlighted region when pointing at the floor
+Press the left grab button to grab ammo. Put the ammo in the gun to reload.
+
+Shoot the moving zombies. Each zombie will take 4 bullets before they die. A dark red splash can be seen to indicate that you have successfully shot a zombie.
+When a zombie dies, there is a 40% chance that it will drop ammo for you to reload. Ammo can be easily seen as they are inside white glowing bubbles.
+
+On your right hand, from the top there is a hp bar (total 10 points, each zombie attack deducts 1 point) followed by your ammo count and score.
+
+The score can be interpreted as '<number of killed zombies> / <total number of zombies spawned>'. 
+Once the number of killed zombies equals total number of zombies spawned, you will hear a thunder and more zombies will keep spawning until you die.
+
+Once you die, there will be a gameover screen instructing you to restart the game by pressing the left trigger button.
+`
+        },
+        {
+            "title": "downloaded packages and objects",
+            "paragraph": `OpenVR XR Plugin
+Oculus XR Plugin
+TextMeshPro
+AllSkyFree
+Horror Assets
+Horror Hospital Pack
+Standard Assets
+StreamVR`
+        },
+        {
+            "youtube": "fijJDUO0afs",
+            "description": "Game Demo"
+        }
+    ]
+}
+
+const juiceIt = {
+    "header": "JuiceIt",
+    "subtext": "feb 22 - mar 22",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "For the assignment 4 for NUS CS4240 2022, we tried to make the traditional fruit ninja game into a VR experience"
+        },
+        {
+            "link": "https://docs.google.com/presentation/d/11FRAbir6vNvxg3QJhxQPyABHX130Oqc3aI3pRjTYtS4/edit?slide=id.p1#slide=id.p1",
+            "title": "Juice-It Presentation Slides",
+        },
+        {
+            "title": "Juice-It Github Repo",
+            "link": " https://github.com/tzw0/CS4240_T7_JuiceIT"
+        },
+        {
+            "img": "assets/article/juiceit/20thStep.jpg",
+            "description": "Our Award for Juice It !"
+        },
+        {
+            "youtube": "75vdrr0cayE",
+            "description": "Game Full Demo"
+        }
+    ]
+}
+
+const inventoryApp = {
+    "header": "InventoryApp",
+    "subtext": "aug 24",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "A simple inventory application for auditting and labelling of warehouse stock with QR codes"
+        },
+        {
+            "title": "Inventory App Github Repo",
+            "link": " https://github.com/tzw0/inventory-app"
+        }
+    ]
+}
+
+const gdriveScroller = {
+    "header": "GDriveScroller",
+    "subtext": "Apr 25",
+    "sections": [
+        {
+            "title": "Description",
+            "paragraph": "A simple stylised live photo scroller for events; It accomodates live photo uploads, organisations and refreshes ordering every cycle"
+        },
+        {
+            "title": "Github Repo",
+            "link": " https://github.com/tzw0/gdrive-scroller"
+        }
+    ]
+}
+
 
 const CG1111 =
 {
@@ -1569,6 +1692,10 @@ export var ArticleData = {
     "projects-siotar": siotar,
     "projects-recontre": recontre,
     "projects-boingboing": boingboing,
+    "projects-zombie-vr": zombieVR,
+    "projects-juice-it": juiceIt,
+    "projects-inventory-app": inventoryApp,
+    "projects-gdrive-scroller": gdriveScroller,
     "modules-CG1111": CG1111,
     "modules-CS1010": CS1010,
     "modules-CS1231": CS1231,

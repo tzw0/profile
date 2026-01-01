@@ -14,11 +14,11 @@ export const skillData = [
         "panels": [
             {
                 "skill": "C",
-                "percent": 90
+                "percent": 65
             },
             {
                 "skill": "Golang",
-                "percent": 80
+                "percent": 90
             },
             {
                 "skill": "Python",
@@ -51,7 +51,7 @@ export const skillData = [
                 "percent": 70
             },
             {
-                "skill": "React",
+                "skill": "React/Nextjs",
                 "percent": 60
             },
             {
@@ -96,7 +96,11 @@ export const skillData = [
             },
             {
                 "skill": "Harbor",
-                "percent": 50
+                "percent": 60
+            },
+            {
+                "skill": "k8s",
+                "percent": 65
             },
         ],
     },

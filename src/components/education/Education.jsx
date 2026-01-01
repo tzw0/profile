@@ -69,7 +69,7 @@ export default function Education(props) {
                     Bachelor of Engineering in
                     <br /><h2> <a href="https://ceg.nus.edu.sg/" target="_blank" rel="noreferrer">Computer Engineering (Hons)</a> </h2>
                     <br /><a href="https://www.nus.edu.sg/" target="_blank" rel="noreferrer">National University of Singapore</a>
-                    <br /><span>CAP:{" "}<h2>4.63/5</h2></span>
+                    <br /><span>CAP:{" "}<h2>4.56/5</h2></span>
                     <br /><br />
                     <a href={transcript} target="_blank" rel="noreferrer">
                         <ResponsiveButton color="primary" title="View Transcript" />
